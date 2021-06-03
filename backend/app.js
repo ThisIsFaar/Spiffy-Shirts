@@ -8,6 +8,7 @@ const cors = require("cors");
 require("dotenv").config();
 //testings
 //My routes
+//dev2
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
