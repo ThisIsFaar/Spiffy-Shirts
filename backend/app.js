@@ -6,6 +6,9 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 require("dotenv").config();
+
+//dev1 commit
+
 //testings
 //My routes
 const authRoutes = require("./routes/auth");
