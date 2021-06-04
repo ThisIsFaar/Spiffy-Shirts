@@ -46,7 +46,7 @@ const StripeCheckout = ({
         console.log(response);
         const orderData = {
           products: products,
-          amount: getFinalAmount() * 100,
+          amount: getFinalAmount(),
         };
         createOrder(userId, tokens, orderData);
         //call further methods here
@@ -57,7 +57,6 @@ const StripeCheckout = ({
       })
       .catch((error) => console.log(error));
   };
-
 
   const showStripButton = () => {
     return isAuthenticated() ? (
