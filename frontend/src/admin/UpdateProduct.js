@@ -110,14 +110,14 @@ const UpdateProduct = ({ match }) => {
       <h4>{createdProduct} updated successfully</h4>
     </div>
   );
-  // const warningMessage = () => (
-  //   <div
-  //     className="alert alert-danger mt-3"
-  //     style={{ display: createdProduct === undefined ? " " : "none" }}
-  //   >
-  //     <h4>Failed to create product</h4>
-  //   </div>
-  // );
+  const warningMessage = () => (
+    <div
+      className="alert alert-danger mt-3"
+      style={{ display: error ? " " : "none" }}
+    >
+      <h4>Failed to create product</h4>
+    </div>
+  );
   const createProductForm = () => (
     <form>
       <span>Post photo</span>
@@ -206,7 +206,7 @@ const UpdateProduct = ({ match }) => {
       <div className="row bg-dark text-white rounded">
         <div className="col-md-8 offset-md-2">
           {successMessage()}
-          {/* {warningMessage()} */}
+          {warningMessage()}
           {createProductForm()}
         </div>
       </div>
