@@ -44,7 +44,7 @@ const Signin = () => {
       if (user && user.role === 1) {
         return <Redirect to="/admin/dashboard" />;
       } else {
-        return <Redirect to="/user/dashboard" /> ;
+        return <Redirect to="/user/dashboard" />;
       }
     }
     if (isAuthenticated()) {
@@ -100,9 +100,11 @@ const Signin = () => {
                 type="password"
               />
             </div>
+
             <button onClick={onSubmit} className="btn btn-success btn-block">
               Submit
             </button>
+            <Link to="/user/forgot">Forgot Password</Link>
           </form>
         </div>
       </div>
