@@ -5,8 +5,8 @@ let transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // upgrade later with STARTTLS
   auth: {
-    user: "spiffytester@gmail.com",
-    pass: "E81A4BB2CA043D581D4E72DB3C0B1A7675E6",
+    user: process.env.AUTH_USER,
+    pass: process.env.AUTH_PASS,
   },
   tls: {
     rejectUnauthorized: false,
@@ -22,14 +22,13 @@ let transporter = nodemailer.createTransport({
 // @desc Recover Password - Generates token and Sends password reset email
 // @access Public
 exports.recover = (req, res) => {
-  User.findOne({ email: req.body.email })
+  const { email } = req.body;
+  User.findOne({ email })
     .then((user) => {
       if (!user)
         return res.status(401).json({
-          message:
-            "The email address " +
-            req.body.email +
-            " is not associated with any account. Double-check your email address and try again.",
+          error:
+            "The email address is not associated with any account. Double-check your email address and try again.",
         });
 
       //Generate and set password reset token
@@ -52,10 +51,12 @@ exports.recover = (req, res) => {
             to: `${user.email}`, // list of receivers
             subject: "passwordreset", // Subject line
             text: `Hi ${user.name} \n
-                   Please click on the following link ${link} to reset your password. \n\n
+                   Please click on the following link ${process.env.RP}${user.resetPasswordToken} to reset your password
+                   . \n\n
                    If you did not request this, please ignore this email and your password will remain unchanged.\n`,
             html: `<b>Hi ${user.name} \n
-            Please click on the following link ${link} to reset your password. \n\n
+            Please click on the following link ${process.env.RP}${user.resetPasswordToken} to reset your password
+            . \n\n
             If you did not request this, please ignore this email and your password will remain unchanged.\n</b>`, // html body
           };
           transporter.sendMail(mail, (error, info) => {
@@ -90,7 +91,7 @@ exports.reset = (req, res) => {
           .json({ message: "Password reset token is invalid or has expired." });
 
       //Redirect user to form with the email address
-      res.render("reset", { user });
+      //res.render("reset", { user });
     })
     .catch((err) => res.status(500).json({ message: err.message }));
 };

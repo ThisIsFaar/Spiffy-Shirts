@@ -38,7 +38,7 @@ router.get("/testroute", isSignedIn, (req, res) => {
 //password reset
 router.post(
   "/recover",
-  [check("email").isEmail().withMessage("Enter a valid email address")],
+  [check("email", "email is required").isEmail()],
   recover
 );
 
