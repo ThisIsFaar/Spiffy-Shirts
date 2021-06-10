@@ -138,3 +138,19 @@ export const updateCategory = (categoryId, userId, token, category) => {
     })
     .catch((err) => console.log(err));
 };
+
+//get all orders
+export const getOrders = (userId, token) => {
+  return fetch(`${API}/order/all/${userId}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
