@@ -34,7 +34,6 @@ router.get(
   "/order/all/:userId",
   isSignedIn,
   isAuthenticated,
-  isAdmin,
   getAllOrders
 );
 

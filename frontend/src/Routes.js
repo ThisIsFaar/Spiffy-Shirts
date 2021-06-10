@@ -17,6 +17,10 @@ import UpdateCategory from "./admin/UpdateCategory";
 import ForgotPassword from "./user/ForgotPassword";
 import Reset from "./user/Reset";
 
+import UserProfile from "./user/UserProfile";
+import MyOrders from "./user/MyOrders";
+
+
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -51,6 +55,10 @@ const Routes = () => {
           exact
           component={UpdateCategory}
         />
+
+        {/* User Routes */}
+        <PrivateRoute path="/user/profile" exact component={UserProfile} />
+        <PrivateRoute path="/user/myorders" exact component={MyOrders} />
       </Switch>
     </BrowserRouter>
   );
