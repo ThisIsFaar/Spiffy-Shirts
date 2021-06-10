@@ -38,6 +38,15 @@ var userSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
+    resetPasswordToken: {
+      type: String,
+      required: false,
+    },
+
+    resetPasswordExpires: {
+      type: Date,
+      required: false,
+    },
   },
   { timestamps: true }
 );
@@ -69,6 +78,11 @@ userSchema.methods = {
       return "";
     }
   },
+};
+
+userSchema.methods.generatePasswordReset = function () {
+  this.resetPasswordToken = crypto.randomBytes(20).toString("hex");
+  this.resetPasswordExpires = Date.now() + 3600000; //expires in an hour
 };
 
 module.exports = mongoose.model("User", userSchema);
