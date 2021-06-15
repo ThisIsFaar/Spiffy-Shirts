@@ -9,6 +9,10 @@ const ProductCartSchema = new mongoose.Schema({
   name: String,
   count: Number,
   price: Number,
+  photo: {
+    data: Buffer,
+    contentType: String,
+  },
 });
 
 const ProductCart = mongoose.model("ProductCart", ProductCartSchema);
@@ -22,7 +26,7 @@ const OrderSchema = new mongoose.Schema(
     status: {
       type: String,
       default: "Processing",
-      enum: ["Processing", "Shipped", "Accepted", "Shipping"],
+      enum: ["Processing", "Shipped", "Accepted", "On-the-way", "Delivered"],
     },
     updated: Date,
     user: {

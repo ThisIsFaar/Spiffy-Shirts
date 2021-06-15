@@ -27,12 +27,13 @@ exports.createOrder = (req, res) => {
 };
 
 exports.getAllOrders = (req, res) => {
-  Order.find()
+  userId = req.profile._id;
+  Order.find({ user: userId })
     .populate("name", "_id")
     .exec((err, order) => {
       if (err) {
         return res.status(400).json({
-          error: "no orders yet, book one mitr",
+          error: "no orders yet",
         });
       }
       res.json(order);

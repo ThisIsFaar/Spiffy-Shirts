@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link, Redirect } from "react-router-dom";
-
 import { signin, authenticate, isAuthenticated } from "../auth/helper/index";
+import styled, { css } from "styled-components";
+import { Subbutton, Divone, Form, Inputdiv } from "../user/elements/signin";
 
 const Signin = () => {
   const [values, setValues] = useState({
@@ -80,43 +81,55 @@ const Signin = () => {
   const signInForm = () => {
     return (
       <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
-          <form>
-            <div className="form-group">
-              <label className="text-light">Email</label>
+        <Divone className="col-6 ">
+          Welcome back to <span className="fs-1">SPIFFY-SHIRTS</span>
+          <p>
+            your favourite place to buy shirts and accessories,HAPPY SHOPPING
+            FOLKS!!!
+          </p>
+          <button>Know More..</button>
+        </Divone>
+        <div className="col-6  text-left">
+          {loadingMessage()}
+          {errorMessage()}
+          <Form>
+            <Inputdiv className="form-group">
+              <label className="text-light">Email</label>&nbsp;&nbsp;
+              <i class="fas fa-at"></i>
               <input
                 onChange={handleChange("email")}
                 value={email}
                 className="form-control"
                 type="text"
               />
-            </div>
-            <div className="form-group">
-              <label className="text-light">Password</label>
+            </Inputdiv>
+            <Inputdiv className="form-group">
+              <label className="text-light">Password</label>&nbsp;&nbsp;
+              <i class="fas fa-key"></i>
               <input
                 onChange={handleChange("password")}
                 value={password}
                 className="form-control"
                 type="password"
               />
-            </div>
+            </Inputdiv>
 
-            <button onClick={onSubmit} className="btn btn-success btn-block">
-              Submit
-            </button>
-            <Link to="/user/forgot">Forgot Password</Link>
-          </form>
+            <Subbutton onClick={onSubmit}>
+              Submit <i class="fab fa-telegram-plane"></i>
+            </Subbutton>
+            <Link to="/user/forgot">
+              <span>Forgot Password ?</span>
+            </Link>
+          </Form>
         </div>
       </div>
     );
   };
   return (
-    <Base title=" Signin Page" description="A page for user to signin">
-      {loadingMessage()}
-      {errorMessage()}
+    <Base title=" Sign in to SPIFFY" description="">
       {signInForm()}
       {performRedirect()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
+      <p className="text-white text-center">{/*JSON.stringify(values)*/}</p>
     </Base>
   );
 };

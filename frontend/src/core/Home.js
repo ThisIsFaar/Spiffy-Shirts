@@ -4,6 +4,7 @@ import { API } from "../backend";
 import Base from "./Base";
 import Card from "./Card";
 import { getProducts } from "./helper/coreapicalls";
+import CartToast from "./CartToast";
 
 export default function Home() {
   const [products, setProducts] = useState([]);

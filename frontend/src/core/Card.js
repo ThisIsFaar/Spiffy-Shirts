@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/CartHelper";
+import CartToast from "./CartToast";
 
 const Card = ({
   product,
@@ -21,6 +22,9 @@ const Card = ({
   const cartPrice = product ? product.price : `10 ka 2`;
 
   const addToCart = () => {
+    addItemToCart(product, () => setRedirect(false));
+  };
+  const buyNow = () => {
     addItemToCart(product, () => setRedirect(true));
   };
 
@@ -29,17 +33,17 @@ const Card = ({
       return <Redirect to="/cart" />;
     }
   };
-  const showAddToCart = (addtoCart) => {
+  const showBuyNow = (addtoCart) => {
     return (
       addtoCart && (
-        <button
-          onClick={addToCart}
-          className="btn btn-block btn-outline-success mt-2 mb-2"
-        >
-          Add to Cart
-        </button>
+        <div className="btn btn-block btn-outline-success " onClick={buyNow}>
+          Buy Now
+        </div>
       )
     );
+  };
+  const showAddToCart = (addtoCart) => {
+    return addtoCart && <div onClick={addToCart}>{CartToast(product)}</div>;
   };
   const showRemoveFromCart = (removeFromCart) => {
     return (
@@ -69,6 +73,7 @@ const Card = ({
         <div className="row">
           <div className="col-12">{showAddToCart(addtoCart)}</div>
           <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
+          <div className="col-12">{showBuyNow(addtoCart)}</div>
         </div>
       </div>
     </div>

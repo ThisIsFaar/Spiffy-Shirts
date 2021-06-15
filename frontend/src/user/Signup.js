@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
+import styled from "styled-components";
+import { Subbutton, Divone, Form, Inputdiv } from "../user/elements/signin";
 
 const Signup = () => {
   const [values, setValues] = useState({
@@ -42,38 +44,47 @@ const Signup = () => {
   const signUpForm = () => {
     return (
       <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
+        <Divone className="col-6">
+          New to <span>SPIFFY ?</span> Sign up now and explore new trendy shirts
+          here.. HAPPY SHOPPING <span>FOLKS!!!</span>
+          <br />
+          <button>Know More..</button>
+        </Divone>
+        <div className="col-6 text-left">
           <form>
-            <div className="form-group">
-              <label className="text-light">Name</label>
+            <Inputdiv className="form-group">
+              <label className="text-light">Name</label>&nbsp;&nbsp;
+              <i class="fas fa-user-alt"></i>
               <input
                 className="form-control"
                 onChange={handleChange("name")}
                 type="text"
                 value={name}
               />
-            </div>
-            <div className="form-group">
-              <label className="text-light">Email</label>
+            </Inputdiv>
+            <Inputdiv className="form-group">
+              <label className="text-light">Email</label>&nbsp;&nbsp;
+              <i class="fas fa-at"></i>
               <input
                 className="form-control"
                 onChange={handleChange("email")}
                 type="text"
                 value={email}
               />
-            </div>
-            <div className="form-group">
-              <label className="text-light">Password</label>
+            </Inputdiv>
+            <Inputdiv className="form-group">
+              <label className="text-light">Password</label>&nbsp;&nbsp;
+              <i class="fas fa-key"></i>
               <input
                 className="form-control"
                 onChange={handleChange("password")}
                 type="password"
                 value={password}
               />
-            </div>
-            <button onClick={onSubmit} className="btn btn-success btn-block">
-              Submit
-            </button>
+            </Inputdiv>
+            <Subbutton onClick={onSubmit} className="btn btn-success btn-block">
+              Submit <i class="fab fa-telegram-plane"></i>
+            </Subbutton>
           </form>
         </div>
       </div>
@@ -83,7 +94,7 @@ const Signup = () => {
   const successMessage = () => {
     return (
       <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
+        <div className="col-6 offset-sm-3 text-left">
           <div
             className="alert alert-success"
             style={{ display: success ? "" : "none" }}
@@ -112,11 +123,11 @@ const Signup = () => {
   };
 
   return (
-    <Base title=" Signup Page" description="A page for user to signup">
+    <Base title=" New here? Sign up NOW!!" description="">
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
+      <p className="text-white text-center">{/*JSON.stringify(values)*/}</p>
     </Base>
   );
 };

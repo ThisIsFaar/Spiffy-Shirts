@@ -61,7 +61,7 @@ const StripeCheckout = ({
   const showStripButton = () => {
     return isAuthenticated() ? (
       <StripeCheckoutButton
-        stripeKey="pk_test_51IwQVtSJRad8JjCcuDhOoqA1Qqbq9mWvP7f0K9E74Vt9rDnnGqx7AXVtsOit5ndXjoy08sZF1lTg1AE8UlUC9lZ60034aucp7b"
+        stripeKey="pk_test_51IwBWTSA2DnCNsC9TQjf3bX7PErZVfoDDDdhawoMSnQwAB7bsToq8qwOkHrfTgT0eguVH5n3Ha78u9wElCTm7eUB00GzXm9GxL"
         // token={makePayment}
         token={makePayment}
         amount={getFinalAmount() * 100}

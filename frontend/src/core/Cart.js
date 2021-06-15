@@ -5,6 +5,7 @@ import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/CartHelper";
 import StripeCheckout from "./StripeCheckout";
+import cartToast from "./CartToast";
 
 const Cart = () => {
   const [Product, setProducts] = useState([]);
@@ -18,6 +19,7 @@ const Cart = () => {
     return (
       <div>
         <h2 className="text-white">this section is to load products</h2>
+
         {Product.map((product, index) => (
           <Card
             key={index}
@@ -41,7 +43,13 @@ const Cart = () => {
   return (
     <Base title="Cart Page" description="Ready to Checkout">
       <div className="row text-center">
-        <div className="col-6 ">{Product!== undefined &&  Product.length > 0 ? loadAllProducts(Product) : ( <h3>No products in cart</h3> ) }</div>
+        <div className="col-6 ">
+          {Product !== undefined && Product.length > 0 ? (
+            loadAllProducts(Product)
+          ) : (
+            <h3>No products in cart</h3>
+          )}
+        </div>
         <div className="col-6 ">
           <StripeCheckout
             products={Product}

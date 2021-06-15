@@ -1,15 +1,6 @@
-.btn,
-.jumbotron,
-.nav :hover {
-  border-radius: 0px;
-}
-
 body {
-  background: #343a40;
+  background-image: url("images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-/* footer {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-} */
+/*# sourceMappingURL=styles.css.map */

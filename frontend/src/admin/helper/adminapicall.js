@@ -74,6 +74,7 @@ export const deleteProduct = (productId, userId, token) => {
 
 //get a product
 export const getProduct = (productId) => {
+  console.log("hello");
   return fetch(`${API}/product/${productId}`, {
     method: "GET",
   })

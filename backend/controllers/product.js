@@ -62,7 +62,7 @@ exports.createProduct = (req, res) => {
   });
 };
 exports.getProduct = (req, res) => {
-  req.product.photo = undefined;
+  //req.product.photo = undefined;
   return res.json(req.product);
 };
 
