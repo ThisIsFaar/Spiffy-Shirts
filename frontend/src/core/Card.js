@@ -73,6 +73,7 @@ const Card = ({
         <p className="Card_Desc h6 text-wrap px-1 py-1 h-25">
           {cartDescription}
         </p>
+
         <p className="h3 text-center h-25 py-4 Card_Price">₹ {cartPrice}</p>
         <div className="row px-2">
           <div className="col-6 p-0">{showAddToCart(addtoCart)}</div>
@@ -80,6 +81,7 @@ const Card = ({
           <Toast className="col-6 p-0">
             {showRemoveFromCart(removeFromCart)}
           </Toast>
+
         </div>
       </div>
     </CardDesign>

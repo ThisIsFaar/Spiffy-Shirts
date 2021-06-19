@@ -10,12 +10,14 @@ export const Subbutton = styled.button`
   border: solid 2px #66fcf1;
   color: #ffffff;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 100%;
+  font-size: 25px;
+  padding: 10px;
+  width: 70%;
+  margin-left: 15%;
   transition: all 0.5s;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 
   &:hover {
     background-color: #66fcf1;
@@ -60,6 +62,7 @@ export const Divone = styled.div`
 export const Form = styled.form`
   Link {
     text-decoration: none;
+    margin-top: 20px;
   }
   span {
     color: #66fcf1;
