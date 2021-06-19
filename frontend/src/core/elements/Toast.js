@@ -10,7 +10,7 @@ export const Toast = styled.div`
     text-align: center;
     font-size: 15px;
     padding: 10px;
-    width: 50%;
+    width: 112px;
     transition: all 0.5s;
     cursor: pointer;
     margin-top: 10px;
@@ -20,6 +20,7 @@ export const Toast = styled.div`
       color: black;
     }
   }
+
   .toast-header {
     background-color: #66fcf1;
     font-family: "Varela Round", sans-serif;
@@ -33,6 +34,12 @@ export const Toast = styled.div`
     #image {
       padding: 20px;
     }
+
+  .Sort_Button {
+    outline: none;
+    background-color: #45a29e;
+    color: white;
+
   }
   #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */

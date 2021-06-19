@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+import Base from "../core/Base";
+import Menu from "../core/Menu";
 import { emailVerification } from "./helper/userapicalls";
+import { Toast } from "../core/elements/Toast";
+import { Subbutton, Divone, Form, Inputdiv } from "../user/elements/signin";
 
 const ForgotPassword = () => {
   const [email, setemail] = useState();
@@ -57,26 +61,31 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
-      <div className="col-md-6 offset-sm-3 text-left">
-        <form>
-          {successMessage()}
-          {errorMessage()}
-          <div className="form-group">
-            <label className="text-light">Email Id</label>
-            <input
-              onChange={handleChange}
-              className="form-control"
-              type="text"
-            />
-          </div>
+    <Base>
+      <div>
+        <div className="col-md-6 offset-sm-3 text-left">
+          <form>
+            {successMessage()}
+            {errorMessage()}
+            <Inputdiv className="form-group">
+              <label className="text-light">Email Id</label>&nbsp;&nbsp;
+              <i class="fas fa-at"></i>
+              <input
+                onChange={handleChange}
+                className="form-control"
+                type="text"
+              />
+            </Inputdiv>
 
-          <button onClick={onSubmit} className="btn btn-success btn-block">
-            Verify
-          </button>
-        </form>
+            <Toast>
+              <button onClick={onSubmit} className="butt">
+                Verify
+              </button>
+            </Toast>
+          </form>
+        </div>
       </div>
-    </div>
+    </Base>
   );
 };
 

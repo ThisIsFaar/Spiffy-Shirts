@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PasswordReset } from "./helper/userapicalls";
+import { Subbutton, Divone, Form, Inputdiv } from "../user/elements/signin";
+import { Toast } from "../core/elements/Toast";
+import Menu from "../core/Menu";
 
 const Reset = ({ match }) => {
   const [password, setpassword] = useState();
@@ -59,22 +62,26 @@ const Reset = ({ match }) => {
 
   return (
     <div>
+      <Menu />
       <div className="col-md-6 offset-sm-3 text-left">
-        <form>
+        <form className="mt-5">
           {successMessage()}
           {errorMessage()}
-          <div className="form-group">
-            <label className="text-light">New Password</label>
+          <Inputdiv className="form-group">
+            <label className="text-light">New Password</label>&nbsp;&nbsp;
+            <i class="fas fa-key"></i>
             <input
               onChange={handleChange}
               className="form-control"
               type="password"
             />
-          </div>
+          </Inputdiv>
 
-          <button onClick={onSubmit} className="btn btn-success btn-block">
-            Update Password
-          </button>
+          <Toast>
+            <button onClick={onSubmit} className="butt">
+              Update
+            </button>
+          </Toast>
         </form>
       </div>
     </div>
