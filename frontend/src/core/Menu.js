@@ -4,93 +4,132 @@ import { signout, isAuthenticated } from "../auth/helper";
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#2ecc72" };
-  } else {
     return { color: "#ffffff" };
+  } else {
+    return { color: "#66fcf1" };
   }
 };
 
 const Menu = ({ history }) => (
   <div>
-    <ul className="nav nav-tabs bg-dark">
-      <li className="nav-item">
-        <Link style={currentTab(history, "/")} className="nav-link" to="/">
-          Home
-        </Link>
-      </li>
-
-      <li className="nav-item">
-        <Link
-          style={currentTab(history, "/cart")}
-          className="nav-link"
-          to="/cart"
+    <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div className="container-fluid">
+        <button
+          className="navbar-toggler bg-primary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          Cart
-        </Link>
-      </li>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link
+                style={currentTab(history, "/")}
+                className="nav-link active"
+                to="/"
+              >
+                <i class="fas fa-lg fa-home"></i>
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                style={currentTab(history, "/products")}
+                className="nav-link active"
+                to="/products"
+              >
+                <i class="fas fa-lg fa-tshirt"></i>
+                Products
+              </Link>
+            </li>
+          </ul>
+          <ul className="d-flex flex-row-reverse mb-2 mb-lg-0">
+            {!isAuthenticated() && (
+              <Fragment>
+                <li className="nav-item">
+                  <Link
+                    style={currentTab(history, "/signin")}
+                    className="nav-link"
+                    to="/signin"
+                  >
+                    <i class="fas fa-lg fa-sign-in-alt"></i>
+                    Signin
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    style={currentTab(history, "/signup")}
+                    className="nav-link"
+                    to="/signup"
+                  >
+                    <i class="fas fa-lg fa-user-plus"></i>
+                    Signup
+                  </Link>
+                </li>
+              </Fragment>
+            )}
+            {isAuthenticated() && (
+              <li className="nav-item">
+                <span
+                  alt="Sign-out"
+                  style={currentTab(history, "/signin")}
+                  className="nav-link"
+                  onClick={() => {
+                    signout(() => {
+                      history.push("/");
+                    });
+                  }}
+                >
+                  <i class="fas fa-lg  fa-sign-out-alt"></i>
+                </span>
+              </li>
+            )}
 
-      {isAuthenticated() && isAuthenticated().user.role === 0 && (
-        <li className="nav-item">
-          <Link
-            style={currentTab(history, "/user/dashboard")}
-            className="nav-link"
-            to="/user/dashboard"
-          >
-            U. Dashboard
-          </Link>
-        </li>
-      )}
+            {isAuthenticated() && isAuthenticated().user.role === 0 && (
+              <Fragment>
+                <li className="nav-item">
+                  <Link
+                    alt="Sign-out"
+                    style={currentTab(history, "/cart")}
+                    className="nav-link"
+                    to="/cart"
+                  >
+                    <i class="fas fa-lg fa-shopping-cart"></i>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    style={currentTab(history, "/user/dashboard")}
+                    className="nav-link"
+                    to="/user/dashboard"
+                  >
+                    <i class="fas fa-lg fa-user-alt"></i>
+                  </Link>
+                </li>
+              </Fragment>
+            )}
 
-      {isAuthenticated() && isAuthenticated().user.role === 1 && (
-        <li className="nav-item">
-          <Link
-            style={currentTab(history, "/admin/dashboard")}
-            className="nav-link"
-            to="/admin/dashboard"
-          >
-            A.Dashboard
-          </Link>
-        </li>
-      )}
-
-      {!isAuthenticated() && (
-        <Fragment>
-          <li className="nav-item">
-            <Link
-              style={currentTab(history, "/signup")}
-              className="nav-link"
-              to="/signup"
-            >
-              Signup
-            </Link>
-          </li>
-
-          <li className="nav-item">
-            <Link
-              style={currentTab(history, "/signin")}
-              className="nav-link"
-              to="/signin"
-            >
-              Signin
-            </Link>
-          </li>
-        </Fragment>
-      )}
-      {isAuthenticated() && (
-        <li className="nav-item">
-          <span
-            className="nav-link text-warning"
-            onClick={() => {
-              signout(() => {
-                history.push("/");
-              });
-            }}
-          >
-            Signout
-          </span>
-        </li>
-      )}
-    </ul>
+            {isAuthenticated() && isAuthenticated().user.role === 1 && (
+              <li className="nav-item">
+                <Link
+                  style={currentTab(history, "/admin/dashboard")}
+                  className="nav-link"
+                  to="/admin/dashboard"
+                >
+                  <i class="fas fa-lg fa-user-shield"></i>
+                  A.Dashboard
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+    </nav>
   </div>
 );
 

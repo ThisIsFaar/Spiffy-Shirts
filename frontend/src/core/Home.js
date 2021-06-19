@@ -5,6 +5,7 @@ import Base from "./Base";
 import Card from "./Card";
 import { getProducts } from "./helper/coreapicalls";
 import CartToast from "./CartToast";
+import styled from "styled-components";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -73,7 +74,7 @@ export default function Home() {
           </select>
           {products.map((product, index) => {
             return (
-              <div key={index} className="col-4 mb-4">
+              <div key={index} className="col-6 mb-4">
                 <Card product={product} />
               </div>
             );

@@ -6,8 +6,8 @@ import styled, { css } from "styled-components";
 
 const StyledDiv = styled.div`
   font-size: 1em;
-  margin: ${({ margin }) => margin || "8rem"};
-  padding: 0.5em 1em;
+  /* margin: ${({ margin }) => margin || "8rem"};
+  padding: 0.5em 1em; */
   border: 2px solid #66fcf1;
   border-radius: 15px;
   background-color: transparent;
@@ -23,7 +23,7 @@ const Footer = styled.footer`
 const Base = ({
   title = "My title",
   description = "my long desc",
-  className = " text-white p-4",
+  className = " text-white p-5 m-2",
   children,
 }) => {
   console.log("API is ", API);

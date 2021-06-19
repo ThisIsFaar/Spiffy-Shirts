@@ -16,10 +16,9 @@ import Cart from "./core/Cart";
 import UpdateCategory from "./admin/UpdateCategory";
 import ForgotPassword from "./user/ForgotPassword";
 import Reset from "./user/Reset";
-
 import UserProfile from "./user/UserProfile";
 import MyOrders from "./user/MyOrders";
-
+import Products from "./core/products";
 
 const Routes = () => {
   return (
@@ -29,6 +28,7 @@ const Routes = () => {
         <Route path="/signup" exact component={Signup} />
         <Route path="/signin" exact component={Signin} />
         <Route path="/cart" exact component={Cart} />
+        <Route path="/products" exact component={Products} />
         <Route path="/reset/:token" exact component={Reset} />
         <PrivateRoute path="/user/dashboard" exact component={UserDashBoard} />
         <Route path="/user/forgot" exact component={ForgotPassword} />
