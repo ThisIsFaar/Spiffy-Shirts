@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import StripeCheckoutButton from "react-stripe-checkout";
 import { API } from "../backend";
 import { createOrder } from "./helper/OrderHelper";
+import styled from "styled-components";
+
 const StripeCheckout = ({
   products,
   setReload = (f) => f,
@@ -16,7 +18,24 @@ const StripeCheckout = ({
     error: "",
     address: "",
   });
-
+  const Button = styled.button`
+    display: inline-block;
+    border-radius: 50px;
+    background-color: #1f2833;
+    border: solid 2px #66fcf1;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 75%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: "Varela Round", sans-serif;
+    &:hover {
+      border-color: #ffffff;
+    }
+  `;
   const tokens = isAuthenticated() && isAuthenticated().token;
   const userId = isAuthenticated() && isAuthenticated().user._id;
 
@@ -69,18 +88,18 @@ const StripeCheckout = ({
         shippingAddress
         billingAddress
       >
-        <button className="btn btn-success">Pay with Stripe</button>
+        <Button className="">CHECKOUT</Button>
       </StripeCheckoutButton>
     ) : (
       <Link to="/signin">
-        <button className="btn btn-warning">Signin</button>
+        <Button>Signin</Button>
       </Link>
     );
   };
 
   return (
     <div>
-      <h3 className="text-white">Stripe Checkout {getFinalAmount()}</h3>
+      <h4 className="text-black">Total Amount: ₹{getFinalAmount()}</h4>
       {showStripButton()}
     </div>
   );

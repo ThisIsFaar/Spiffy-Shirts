@@ -4,8 +4,12 @@ import Toasty from "./helper/ToastImg";
 import { Toast } from "./elements/Toast";
 import profile from "../images/profile.jpg";
 import { Subbutton } from "../user/elements/signin";
+import { Redirect } from "react-router-dom";
 
 const cartToast = (product) => {
+  const getARedirect = () => {
+    return <Redirect to="/cart" />;
+  };
   const close = () => {
     var x = document.getElementById("snackbar");
 
@@ -33,17 +37,16 @@ const cartToast = (product) => {
         aria-atomic="true"
       >
         <div className="toast-header">
-          <strong>Added To Cart</strong>
-          <small>11 mins ago</small>
+          <strong>Added To Cart</strong>&nbsp;&nbsp;&nbsp;
+          <small>0 seconds ago</small>
           <button id="close" type="button" aria-label="Close" onClick={close}>
             <span>&times;</span>
           </button>
         </div>
-        <div class="toast-body">
+        <div className="toast-body">
           <Toasty id="image" product={product} />
           {product.name}
-          <br />
-          {product.price}
+          <br />₹{product.price}{" "}
         </div>
       </div>
       <button className="butt" onClick={show}>

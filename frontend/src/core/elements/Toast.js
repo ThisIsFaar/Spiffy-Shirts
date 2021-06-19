@@ -20,21 +20,39 @@ export const Toast = styled.div`
       color: black;
     }
   }
+  .toast-header {
+    background-color: #66fcf1;
+    font-family: "Varela Round", sans-serif;
+    text-transform: capitalize;
+    button {
+      background-color: transparent;
+      position: absolute;
+      border: none;
+      right: 25px;
+    }
+    #image {
+      padding: 20px;
+    }
+  }
   #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     max-width: 550px;
     min-height: 250px;
+    max-height: 250px;
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #333; /* Black background color */
+    background-color: #1f2833; /* Black background color */
     color: #fff; /* White text color */
-    text-align: center; /* Centered text */
+    text-align: left; /* Centered text */
     border-radius: 2px; /* Rounded borders */
     padding: 16px; /* Padding */
     position: fixed; /* Sit on top of the screen */
     z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    bottom: 30px; /* 30px from the bottom */
+    left: 75%; /* Center the snackbar */
+    top: 30px; /* 30px from the bottom */
+    text-transform: capitalize;
+    font-family: "Varela Round", sans-serif;
+    font-size: x-large;
   }
 
   /* Show the snackbar when clicking on a button (class added with JavaScript) */
