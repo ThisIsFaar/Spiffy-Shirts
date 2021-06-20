@@ -10,6 +10,15 @@ import temp from "../images/temp.png";
 import aboutill from "../images/aboutill.svg";
 import Menu from "./Menu";
 
+//feature img
+import costImg from "../images/features/cost.svg";
+import fastestDelImg from "../images/features/fastest_delivery.svg";
+import influenceImg from "../images/features/influence.svg";
+import secureImg from "../images/features/secure.svg";
+import trendyImg from "../images/features/trendy.svg";
+
+import { SpiffyFeatureDesign } from "./elements/SpiffyFeatures";
+
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
@@ -205,15 +214,10 @@ export default function Home() {
           <SpiffyWaveTop />
           <div className="row">
             <div class="col-6 p-5">
-              <h1 className="display-1 text-center text-white">
-                Spiffy-Shirts
+              <h1 className="display-2 text-center text-white">
+                Why Spiffy-Shirts?
               </h1>
-              <p className="text-center text-white">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Debitis facilis officiis adipisci dolorem sunt amet labore
-                deserunt repellat. Ex nihil voluptatem eum inventore deserunt
-                laborum, iure repellat voluptas accusantium amet.
-              </p>
+              <p className="text-center text-white">Trends Starts Here</p>
             </div>
             <div class="col-6">
               <img className="w-75 pt-5 mt-5" src={aboutill} alt="" />
@@ -241,10 +245,90 @@ export default function Home() {
     );
   };
   const SpiffyFeature = () => {
-    return <div>SpiffyFeature</div>;
+    // const firstFDiv = {
+    //   height: "300px",
+    //   background: "#232526",
+    //   background: "-webkit - linear - gradient(to right, #414345, #232526)",
+    //   background: "linear - gradient(to right, #414345, #232526)",
+    // };
+
+    return (
+      <div>
+        <SpiffyWaveTop />
+        <div className="container" style={{ height: 1000, width: 1000 }}>
+          <h1 class="display-1 text-center text-white pb-5">Features</h1>
+          <SpiffyFeatureDesign
+            className="row position-absolute"
+            style={{ height: 1000, width: 1000 }}
+          >
+            <div className="row" style={{ height: 300, width: 1000 }}>
+              <div
+                className="position-absolute"
+                style={{ width: 600, height: 300 }}
+              >
+                <div className="firstFDiv">
+                  <img src={costImg} alt="" width={250} />
+                  <p className="text-white display-5 ">Cost Effective!</p>
+                </div>
+              </div>
+
+              <div className="offset-7" style={{ width: 400, height: 300 }}>
+                <div className="secondFDiv">
+                  <img src={secureImg} alt="" width={250} />
+                  <p className="text-white display-5 ">Secured!</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="row flex-column position-absolute">
+              <div
+                className="col-4 "
+                style={{ height: 300, width: 400, marginTop: 300 }}
+              >
+                <div className="thirdFDiv">
+                  <p className="text-white h2 text-center">
+                    Loved By Influencers!
+                  </p>
+                  <img src={influenceImg} alt="" width={230} />
+                </div>
+              </div>
+              <div className="col-4 " style={{ height: 300, width: 400 }}>
+                <div className="fourthFDiv">
+                  <p className="text-white h2 text-center">
+                    Trendy Collections!
+                  </p>
+                  <img src={trendyImg} alt="" width={300} />
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="row position-absolute p-0"
+              style={{ marginTop: 300, marginLeft: 371 }}
+            >
+              <div className="col-8 " style={{ height: 600, width: 600 }}>
+                <div className="fifthFDiv">
+                  <p className="text-white display-5 text-center">
+                    Fastest Delivery!
+                  </p>
+                  <img src={fastestDelImg} alt="" width={400} />
+                </div>
+              </div>
+            </div>
+          </SpiffyFeatureDesign>
+        </div>
+        <SpiffyWaveBottom />
+      </div>
+    );
   };
+
   const SpiffyFooter = () => {
-    return <div>SpiffyFooter</div>;
+    return (
+      <div>
+        {/* <SpiffyWaveBottom /> */}
+        SpiffyFooter
+      </div>
+    );
   };
   return (
     <div>
