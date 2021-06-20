@@ -39,7 +39,6 @@ export const Toast = styled.div`
     outline: none;
     background-color: #45a29e;
     color: white;
-
   }
   #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
