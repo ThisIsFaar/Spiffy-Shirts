@@ -26,17 +26,18 @@ export const Cartdiv = styled.div`
   }
 
   .cart {
-    background: #360033;
+    background: #360033; /* fallback for old browsers */
     background: -webkit-linear-gradient(
-      to top,
+      to bottom,
       #0b8793,
       #360033
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
-      to top,
+      to bottom,
       #0b8793,
       #360033
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     border-right: 1px solid #fff;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
@@ -56,12 +57,12 @@ export const Cartdiv = styled.div`
     font-family: "Varela Round", sans-serif;
     background: #360033; /* fallback for old browsers */
     background: -webkit-linear-gradient(
-      to top,
+      to bottom,
       #0b8793,
       #360033
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
-      to top,
+      to bottom,
       #0b8793,
       #360033
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
