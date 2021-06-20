@@ -6,11 +6,13 @@ export const CardDesign = styled.div`
   }
   .Card_Title {
     color: #66fcf1;
+    text-transform: capitalize;
   }
   .Card_Desc {
     overflow: auto;
     color: #c5c6c7;
     font-family: "Varela Round";
+    text-transform: capitalize;
   }
   .Card_Price {
     color: #66fcf1;

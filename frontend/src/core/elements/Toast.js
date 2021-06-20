@@ -34,6 +34,7 @@ export const Toast = styled.div`
     #image {
       padding: 20px;
     }
+  }
 
   .Sort_Button {
     outline: none;
