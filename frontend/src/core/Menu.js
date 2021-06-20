@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/helper";
-
+import brand from "../images/brand.jpg";
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
     return { color: "#ffffff" };
@@ -13,7 +13,15 @@ const currentTab = (history, path) => {
 const Menu = ({ history }) => (
   <div>
     <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
-      <div className="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src={brand} width="175" height="40" alt="" />
+      </a>
+      <div
+        className="container-fluid"
+        style={{
+          marginLeft: -32,
+        }}
+      >
         <button
           className="navbar-toggler bg-primary"
           type="button"
@@ -34,7 +42,7 @@ const Menu = ({ history }) => (
                 to="/"
               >
                 <i class="fas fa-lg fa-home"></i>
-                Home
+                &nbsp; Home
               </Link>
             </li>
             <li className="nav-item">
@@ -44,7 +52,7 @@ const Menu = ({ history }) => (
                 to="/products"
               >
                 <i class="fas fa-lg fa-tshirt"></i>
-                Products
+                &nbsp;Products
               </Link>
             </li>
           </ul>
@@ -58,7 +66,7 @@ const Menu = ({ history }) => (
                     to="/signin"
                   >
                     <i class="fas fa-lg fa-sign-in-alt"></i>
-                    Signin
+                    &nbsp;Signin
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -68,7 +76,7 @@ const Menu = ({ history }) => (
                     to="/signup"
                   >
                     <i class="fas fa-lg fa-user-plus"></i>
-                    Signup
+                    &nbsp;Signup
                   </Link>
                 </li>
               </Fragment>
