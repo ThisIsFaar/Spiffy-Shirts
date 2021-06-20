@@ -19,7 +19,6 @@ import carousel1 from "../images/carousel1.jpg";
 import carousel2 from "../images/carousel2.jpg";
 import carousel3 from "../images/carousel3.jpg";
 
-
 //feature img
 import costImg from "../images/features/cost.svg";
 import fastestDelImg from "../images/features/fastest_delivery.svg";
@@ -28,7 +27,7 @@ import secureImg from "../images/features/secure.svg";
 import trendyImg from "../images/features/trendy.svg";
 
 import { SpiffyFeatureDesign } from "./elements/SpiffyFeatures";
-
+import Footer from "./Footer";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -191,7 +190,7 @@ export default function Home() {
           </linearGradient>
         </defs>
         <path
-          d="M 0,400 C 0,400 0,200 0,200 C 79.78947368421055,220.1244019138756 159.5789473684211,240.2488038277512 265,255 C 370.4210526315789,269.7511961722488 501.47368421052624,279.12918660287085 619,254 C 736.5263157894738,228.87081339712918 840.5263157894738,169.23444976076556 913,163 C 985.4736842105262,156.76555023923444 1026.421052631579,203.933014354067 1109,219 C 1191.578947368421,234.066985645933 1315.7894736842104,217.03349282296648 1440,200 C 1440,200 1440,400 1440,400 Z"
+          d="M 0,400 C 0,400 0,200 0,200 C 121.33333333333331,180.39999999999998 242.66666666666663,160.79999999999998 417,168 C 591.3333333333334,175.20000000000002 818.6666666666667,209.20000000000002 998,219 C 1177.3333333333333,228.79999999999998 1308.6666666666665,214.39999999999998 1440,200 C 1440,200 1440,400 1440,400 Z"
           stroke="none"
           stroke-width="0"
           fill="url(#gradient)"
@@ -210,7 +209,19 @@ export default function Home() {
               <h1 className="display-2 text-center text-white">
                 Why Spiffy-Shirts?
               </h1>
-              <p className="text-center text-white">Trends Starts Here</p>
+              <p
+                className="text-justify m-1
+               p-4 text-white"
+              >
+                Spiffy Shirts has made a mark as the largest menswear brand .
+                Known for its standardized fits, superior quality, wide range
+                and fashionable styles, the trusted mid-segment brand comes with
+                apparel offerings for young men entering the corporate world.
+                The brand boosts confidence with their clothing that marks the
+                “Beginning of Good Things”. The trendy and contemporary work
+                wear formals are perfect for young professionals who want to
+                express their sartorial tastes.
+              </p>
             </div>
             <div class="col-6">
               <img className="w-75 pt-5 mt-5" src={aboutill} alt="" />
@@ -225,7 +236,6 @@ export default function Home() {
     return (
       <div>
         <Categorydiv>
-          <SpiffyWaveTop />
           <h1 className="display-1 text-white text-center py-5 m-0">
             Categories
           </h1>
@@ -254,7 +264,6 @@ export default function Home() {
 
     return (
       <div>
-        <SpiffyWaveTop />
         <div className="container" style={{ height: 1000, width: 1000 }}>
           <h1 class="display-1 text-center text-white pb-5">Features</h1>
           <SpiffyFeatureDesign
@@ -322,14 +331,6 @@ export default function Home() {
     );
   };
 
-  const SpiffyFooter = () => {
-    return (
-      <div>
-        {/* <SpiffyWaveBottom /> */}
-        SpiffyFooter
-      </div>
-    );
-  };
   return (
     <div>
       <Menu />
@@ -337,7 +338,7 @@ export default function Home() {
       <SpiffyAbout />
       <SpiffyCategory />
       <SpiffyFeature />
-      <SpiffyFooter />
+      <Footer />
     </div>
   );
 }

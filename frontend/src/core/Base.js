@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import "../styles.css";
 import { API } from "../backend";
 import styled, { css } from "styled-components";
+import Footer from "../core/Footer";
 
 const StyledDiv = styled.div`
   font-size: 1em;
@@ -14,10 +15,6 @@ const StyledDiv = styled.div`
 `;
 const H2 = styled.h2`
   font-family: "Merriweather Sans", sans-serif;
-`;
-const Footer = styled.footer`
-  background-color: #66fcf1;
-  border: solid 2px white;
 `;
 
 const Base = ({
@@ -37,18 +34,7 @@ const Base = ({
         </div>
         <StyledDiv className={className}>{children}</StyledDiv>
       </div>
-
-      <footer className="footer  mt-auto py-3">
-        <Footer className="container-fluid  text-black text-center py-3">
-          <h4>have any ques?</h4>
-          <button className="btn btn-warning btn-lg">Contact us</button>
-        </Footer>
-        <div className="container">
-          <span className="text-muted">
-            amazing place to by <span className="text-white">T-shirts</span>{" "}
-          </span>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
