@@ -9,7 +9,14 @@ import styled from "styled-components";
 import temp from "../images/temp.png";
 import aboutill from "../images/aboutill.svg";
 import Menu from "./Menu";
-
+import { Categorydiv } from "./elements/Category";
+import summer2 from "../images/SummerNew.jpg";
+import winter2 from "../images/WinterNew.jpg";
+import beach2 from "../images/BeachNew.jpg";
+import party2 from "../images/Party.jpg";
+import carousel1 from "../images/carousel1.jpg";
+import carousel2 from "../images/carousel2.jpg";
+import carousel3 from "../images/carousel3.jpg";
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
@@ -90,31 +97,13 @@ export default function Home() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={temp} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>
-                Some representative placeholder content for the first slide.
-              </p>
-            </div>
+            <img src={carousel1} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={temp} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
-            </div>
+            <img src={carousel2} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={temp} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
-            </div>
+            <img src={carousel3} className="d-block w-100" alt="..." />
           </div>
         </div>
         <button
@@ -189,7 +178,7 @@ export default function Home() {
           </linearGradient>
         </defs>
         <path
-          d="M 0,400 C 0,400 0,200 0,200 C 94.85167464114832,182.94736842105263 189.70334928229664,165.89473684210526 284,192 C 378.29665071770336,218.10526315789474 472.0382775119617,287.36842105263156 555,274 C 637.9617224880383,260.63157894736844 710.1435406698565,164.63157894736838 823,144 C 935.8564593301435,123.3684210526316 1089.3875598086124,178.10526315789477 1199,200 C 1308.6124401913876,221.89473684210523 1374.3062200956938,210.9473684210526 1440,200 C 1440,200 1440,400 1440,400 Z"
+          d="M 0,400 C 0,400 0,200 0,200 C 79.78947368421055,220.1244019138756 159.5789473684211,240.2488038277512 265,255 C 370.4210526315789,269.7511961722488 501.47368421052624,279.12918660287085 619,254 C 736.5263157894738,228.87081339712918 840.5263157894738,169.23444976076556 913,163 C 985.4736842105262,156.76555023923444 1026.421052631579,203.933014354067 1109,219 C 1191.578947368421,234.066985645933 1315.7894736842104,217.03349282296648 1440,200 C 1440,200 1440,400 1440,400 Z"
           stroke="none"
           stroke-width="0"
           fill="url(#gradient)"
@@ -227,16 +216,23 @@ export default function Home() {
   const SpiffyCategory = () => {
     return (
       <div>
-        <div>
+        <Categorydiv>
           <SpiffyWaveTop />
-          <p class="text-center text-white">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum vel
-            obcaecati asperiores, quidem nisi sapiente unde voluptatum fugiat?
-            Doloremque tempore sequi numquam minima distinctio quo sint quasi
-            eaque nostrum earum.
-          </p>
+          <h1 className="display-1 text-white text-center py-5 m-0">
+            Categories
+          </h1>
+          <div className="container">
+            <img src={summer2} alt="" />
+            <span>SUMMER</span>
+            <img src={winter2} alt="" />
+            <span>WINTER</span>
+            <img src={beach2} alt="" />
+            <span>BEACH</span>
+            <img src={party2} alt="" />
+            <span>PARTY</span>
+          </div>
           <SpiffyWaveBottom />
-        </div>
+        </Categorydiv>
       </div>
     );
   };
