@@ -2,7 +2,7 @@ import React from "react";
 import { isAuthenticated } from "../auth/helper";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
-import { Menu, MenuButton, Container, Menudiv } from "./elements/userprofile";
+import { Menu, MenuButton, Container } from "./elements/userprofile";
 import profile from "../images/profile.jpg";
 const UserProfile = () => {
   function open() {
@@ -14,7 +14,7 @@ const UserProfile = () => {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("openNav").style.display = "inline-block";
   }
-  const { user, token } = isAuthenticated();
+  const { user } = isAuthenticated();
 
   const myProfile = () => {
     return (
@@ -34,7 +34,7 @@ const UserProfile = () => {
       // );
       <Container class="container">
         <div class="images">
-          <img src={profile} />
+          <img src={profile} alt="img"/>
         </div>
         <div class="product">
           <h1>

@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { getOrders } from "../admin/helper/adminapicall";
 import StatusModal from "./Modal";
 import $ from "jquery";
-import profile from "../images/profile.jpg";
-import styled from "styled-components";
 import { Container, Menu, MenuButton } from "./elements/orders";
 import Image from "./helper/Image";
 
@@ -22,7 +20,6 @@ const MyOrders = () => {
   }
   const { user, token } = isAuthenticated();
   const [orders, setOrders] = useState([]);
-  const [status, setStatus] = useState("");
   const [temp, settemp] = useState("");
   let productId = {};
 
@@ -34,10 +31,6 @@ const MyOrders = () => {
         setOrders(data);
       }
     });
-  };
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    setStatus(event.target.value);
   };
   useEffect(() => {
     preload();

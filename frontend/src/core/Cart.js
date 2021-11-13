@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import { API } from "../backend";
 import Base from "./Base";
-import Card from "./Card";
 import { loadCart, removeItemFromCart } from "./helper/CartHelper";
 import StripeCheckout from "./StripeCheckout";
-import cartToast from "./CartToast";
 import { Cartdiv } from "./elements/CartStyle";
 import ToastImg from "./helper/ToastImg";
 

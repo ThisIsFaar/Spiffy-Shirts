@@ -23,8 +23,17 @@ const stripeRoutes = require("./routes/stripepayment");
 // {useNewUrlParser: true, useUnifiedTopology: true});
 
 //DB connection
+// mongoose
+//   .connect(process.env.DATABASE, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//   })
+//   .then(() => {
+//     console.log("DB CONNECTED");
+//   });
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect('mongodb://localhost:27017/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
-import Menu from "../core/Menu";
 import { emailVerification } from "./helper/userapicalls";
 import { Toast } from "../core/elements/Toast";
-import { Subbutton, Divone, Form, Inputdiv } from "../user/elements/signin";
+import { Inputdiv } from "../user/elements/signin";
 
 const ForgotPassword = () => {
   const [email, setemail] = useState();

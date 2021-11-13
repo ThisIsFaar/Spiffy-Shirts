@@ -1,5 +1,4 @@
 import { API } from "../../backend";
-import AddCategory from "../AddCategory";
 
 export const createCategory = (userId, token, category) => {
   return fetch(`${API}/category/create/${userId}`, {

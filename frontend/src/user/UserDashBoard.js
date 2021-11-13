@@ -2,7 +2,6 @@ import React from "react";
 import Base from "../core/Base";
 import { isAuthenticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
 import { Menu, MenuButton, Container, Menudiv } from "./elements/userprofile";
 import profile from "../images/profile.jpg";
 
@@ -39,7 +38,7 @@ const UserDashBoard = () => {
     main.classList.add("col-13");
   }
   const {
-    user: { name, email, role },
+    user: { name, email },
   } = isAuthenticated();
   const userLeftSide = () => {
     return (
@@ -100,7 +99,7 @@ const UserDashBoard = () => {
     return (
       <Container class="container">
         <div class="images">
-          <img src={profile} />
+          <img src={profile} alt="img" />
         </div>
         <div class="product">
           <h1>

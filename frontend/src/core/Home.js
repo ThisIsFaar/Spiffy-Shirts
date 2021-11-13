@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles.css";
-import { API } from "../backend";
-import Base from "./Base";
-import Card from "./Card";
 import { getProducts } from "./helper/coreapicalls";
-import CartToast from "./CartToast";
-import styled from "styled-components";
-import temp from "../images/temp.png";
 import aboutill from "../images/aboutill.svg";
 import Menu from "./Menu";
 
@@ -31,8 +25,8 @@ import Footer from "./Footer";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState(false);
-  const [sortType, setsortType] = useState("");
+  const [ setError] = useState(false);
+  const [sortType] = useState("");
 
   const loadAllproduct = () => {
     getProducts().then((data) => {

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link, Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth/helper/index";
-import styled, { css } from "styled-components";
 import { Subbutton, Divone, Form, Inputdiv } from "../user/elements/signin";
 
 const Signin = () => {

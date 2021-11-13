@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { API } from "../../backend";
 import { Images } from "../elements/orders";
 

@@ -2,7 +2,7 @@ import React from "react";
 import Menu from "./Menu";
 import "../styles.css";
 import { API } from "../backend";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Footer from "../core/Footer";
 
 const StyledDiv = styled.div`

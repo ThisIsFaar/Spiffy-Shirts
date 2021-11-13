@@ -31,12 +31,9 @@ const UpdateProduct = ({ match }) => {
     price,
     stock,
     categories,
-    category,
-    loading,
     error,
     createdProduct,
     formData,
-    getaRedirect,
   } = values;
   const preload = (productId) => {
     getProduct(productId).then((data) => {

@@ -1,15 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import Toasty from "./helper/ToastImg";
 import { Toast } from "./elements/Toast";
-import profile from "../images/profile.jpg";
-import { Subbutton } from "../user/elements/signin";
-import { Redirect } from "react-router-dom";
 
 const cartToast = (product) => {
-  const getARedirect = () => {
-    return <Redirect to="/cart" />;
-  };
   const close = () => {
     var x = document.getElementById("snackbar");
 

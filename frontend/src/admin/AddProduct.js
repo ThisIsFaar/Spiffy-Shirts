@@ -27,12 +27,8 @@ const AddProduct = () => {
     price,
     stock,
     categories,
-    category,
-    loading,
-    error,
     createdProduct,
     formData,
-    getaRedirect,
   } = values;
   const preload = () => {
     getCategories().then((data) => {

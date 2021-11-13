@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import $ from "jquery";
 import { Statusdiv } from "./elements/status";
-import styled from "styled-components";
 const StatusModal = (orders) => {
   const { order } = orders;
   console.log(order);

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { isAuthenticated } from "../auth/helper";
-import { cartEmpty, loadCart } from "./helper/CartHelper";
+import { cartEmpty } from "./helper/CartHelper";
 import { Link } from "react-router-dom";
 import StripeCheckoutButton from "react-stripe-checkout";
 import { API } from "../backend";
@@ -12,12 +12,6 @@ const StripeCheckout = ({
   setReload = (f) => f,
   reload = undefined,
 }) => {
-  const [data, setData] = useState({
-    loading: false,
-    success: false,
-    error: "",
-    address: "",
-  });
   const Button = styled.button`
     display: inline-block;
     border-radius: 50px;
