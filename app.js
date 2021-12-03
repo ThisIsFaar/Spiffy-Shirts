@@ -63,7 +63,7 @@ app.use("/api", orderRoutes);
 app.use("/api", stripeRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("frontend/src"));
+  app.use(express.static("frontend/public"));
 }
 
 //Starting a Server
