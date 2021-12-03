@@ -32,12 +32,16 @@ const stripeRoutes = require("./routes/stripepayment");
 //   .then(() => {
 //     console.log("DB CONNECTED");
 //   });
+
 mongoose
-  .connect("mongodb://localhost:27017/test", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+  .connect(
+    "mongodb+srv://admin:admin%40hmr.com@cluster0.vdb6b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+    }
+  )
   .then(() => {
     console.log("DB CONNECTED");
   });
