@@ -139,7 +139,7 @@ const MyOrders = () => {
                   <h1>
                     <span>
                       {products[0].name}
-                      {countProducts != 1 ? (
+                      {countProducts !== 1 ? (
                         <span> and {countProducts - 1} others</span>
                       ) : (
                         <span></span>
