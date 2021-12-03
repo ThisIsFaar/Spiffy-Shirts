@@ -65,6 +65,7 @@ app.use("/api", stripeRoutes);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
 }
+// app.use(express.static("frontend/build"));
 
 //Starting a Server
 app.listen(port, () => {
