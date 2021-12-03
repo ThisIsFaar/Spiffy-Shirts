@@ -33,7 +33,7 @@ const stripeRoutes = require("./routes/stripepayment");
 //     console.log("DB CONNECTED");
 //   });
 mongoose
-  .connect('mongodb://localhost:27017/test', {
+  .connect("mongodb://localhost:27017/test", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -48,7 +48,7 @@ app.use(cookieParser());
 app.use(cors());
 
 //PORT
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 //My routes
 app.use("/api", authRoutes);
@@ -57,6 +57,10 @@ app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", stripeRoutes);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 //Starting a Server
 app.listen(port, () => {

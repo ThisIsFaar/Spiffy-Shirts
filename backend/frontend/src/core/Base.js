@@ -3,7 +3,7 @@ import Menu from "./Menu";
 import "../styles.css";
 import { API } from "../backend";
 import styled from "styled-components";
-import Footer from "../core/Footer";
+import Footer from "./Footer";
 
 const StyledDiv = styled.div`
   font-size: 1em;

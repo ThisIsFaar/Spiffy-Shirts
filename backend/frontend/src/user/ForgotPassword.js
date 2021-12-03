@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { PasswordReset } from "./helper/userapicalls";
-import { Inputdiv } from "../user/elements/signin";
+import Base from "../core/Base";
+import { emailVerification } from "./helper/userapicalls";
 import { Toast } from "../core/elements/Toast";
-import Menu from "../core/Menu";
+import { Inputdiv } from "./elements/signin";
 
-const Reset = ({ match }) => {
-  const [password, setpassword] = useState();
+const ForgotPassword = () => {
+  const [email, setemail] = useState();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
   const handleChange = (event) => {
     console.log(event);
     setError("");
-    setpassword(event.target.value);
+    setemail(event.target.value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    PasswordReset({ password }, match.params.token)
+    emailVerification({ email })
       .then((data) => {
         if (data.error) {
           setError(data.error);
@@ -38,7 +37,7 @@ const Reset = ({ match }) => {
             className="alert alert-success"
             style={{ display: success ? "" : "none" }}
           >
-            Password is updated <Link to="/signin">Login Here</Link>
+            Password Reset Link Is Sent To Your Email
           </div>
         </div>
       </div>
@@ -61,31 +60,32 @@ const Reset = ({ match }) => {
   };
 
   return (
-    <div>
-      <Menu />
-      <div className="col-md-6 offset-sm-3 text-left">
-        <form className="mt-5">
-          {successMessage()}
-          {errorMessage()}
-          <Inputdiv className="form-group">
-            <label className="text-light">New Password</label>&nbsp;&nbsp;
-            <i class="fas fa-key"></i>
-            <input
-              onChange={handleChange}
-              className="form-control"
-              type="password"
-            />
-          </Inputdiv>
+    <Base>
+      <div>
+        <div className="col-md-6 offset-sm-3 text-left">
+          <form>
+            {successMessage()}
+            {errorMessage()}
+            <Inputdiv className="form-group">
+              <label className="text-light">Email Id</label>&nbsp;&nbsp;
+              <i class="fas fa-at"></i>
+              <input
+                onChange={handleChange}
+                className="form-control"
+                type="text"
+              />
+            </Inputdiv>
 
-          <Toast>
-            <button onClick={onSubmit} className="butt">
-              Update
-            </button>
-          </Toast>
-        </form>
+            <Toast>
+              <button onClick={onSubmit} className="butt">
+                Verify
+              </button>
+            </Toast>
+          </form>
+        </div>
       </div>
-    </div>
+    </Base>
   );
 };
 
-export default Reset;
+export default ForgotPassword;
