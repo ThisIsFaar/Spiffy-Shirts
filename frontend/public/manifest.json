@@ -1,5 +1,6 @@
 {
   "name": "Spiffy-Shirts",
+  "short_name": "Spiffy-Shirts",
   "theme_color": "#372f77",
   "background_color": "#361433",
   "display": "standalone",
