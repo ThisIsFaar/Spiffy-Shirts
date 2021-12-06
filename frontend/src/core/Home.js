@@ -21,11 +21,12 @@ import secureImg from "../images/features/secure.svg";
 import trendyImg from "../images/features/trendy.svg";
 
 import { SpiffyFeatureDesign } from "./elements/SpiffyFeatures";
+import { AboutSpiffy } from "./elements/AboutStyle";
 import Footer from "./Footer";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
-  const [ setError] = useState(false);
+  const [setError] = useState(false);
   const [sortType] = useState("");
 
   const loadAllproduct = () => {
@@ -198,29 +199,32 @@ export default function Home() {
       <div>
         <div classnName="container">
           <SpiffyWaveTop />
-          <div className="row">
-            <div class="col-6 p-5">
-              <h1 className="display-2 text-center text-white">
-                Why Spiffy-Shirts?
-              </h1>
-              <p
-                className="text-justify m-1
+          <AboutSpiffy>
+            <div className="d-flex flex-row flex-wrap justify-content-center">
+              <div className="lp-intro">
+                <h1 className="display-2 text-center text-white">
+                  Why Spiffy-Shirts?
+                </h1>
+                <p
+                  className="text-justify m-1
                p-4 text-white"
-              >
-                Spiffy Shirts has made a mark as the largest menswear brand .
-                Known for its standardized fits, superior quality, wide range
-                and fashionable styles, the trusted mid-segment brand comes with
-                apparel offerings for young men entering the corporate world.
-                The brand boosts confidence with their clothing that marks the
-                “Beginning of Good Things”. The trendy and contemporary work
-                wear formals are perfect for young professionals who want to
-                express their sartorial tastes.
-              </p>
+                >
+                  Spiffy Shirts has made a mark as the largest menswear brand .
+                  Known for its standardized fits, superior quality, wide range
+                  and fashionable styles, the trusted mid-segment brand comes
+                  with apparel offerings for young men entering the corporate
+                  world. The brand boosts confidence with their clothing that
+                  marks the “Beginning of Good Things”. The trendy and
+                  contemporary work wear formals are perfect for young
+                  professionals who want to express their sartorial tastes.
+                </p>
+              </div>
+              <div className="lp-intro">
+                <img className="w-75 mx-5" src={aboutill} alt="" />
+              </div>
             </div>
-            <div class="col-6">
-              <img className="w-75 pt-5 mt-5" src={aboutill} alt="" />
-            </div>
-          </div>
+          </AboutSpiffy>
+
           <SpiffyWaveBottom />
         </div>
       </div>
@@ -249,74 +253,34 @@ export default function Home() {
     );
   };
   const SpiffyFeature = () => {
-    // const firstFDiv = {
-    //   height: "300px",
-    //   background: "#232526",
-    //   background: "-webkit - linear - gradient(to right, #414345, #232526)",
-    //   background: "linear - gradient(to right, #414345, #232526)",
-    // };
-
     return (
       <div>
-        <div className="container" style={{ height: 1000, width: 1000 }}>
-          <h1 class="display-1 text-center text-white pb-5">Features</h1>
-          <SpiffyFeatureDesign
-            className="row position-absolute"
-            style={{ height: 1000, width: 1000 }}
-          >
-            <div className="row" style={{ height: 300, width: 1000 }}>
-              <div
-                className="position-absolute"
-                style={{ width: 600, height: 300 }}
-              >
-                <div className="firstFDiv">
-                  <img src={costImg} alt="" width={250} />
-                  <p className="text-white display-5 ">Cost Effective!</p>
-                </div>
-              </div>
-
-              <div className="offset-7" style={{ width: 400, height: 300 }}>
-                <div className="secondFDiv">
-                  <img src={secureImg} alt="" width={250} />
-                  <p className="text-white display-5 ">Secured!</p>
-                </div>
-              </div>
+        <div className="container">
+          <h1 class="display-1 text-center text-white py-5">Features</h1>
+          <SpiffyFeatureDesign>
+            <div className="firstFDiv">
+              <img className="mx-5 my-4" src={costImg} alt="" width={250} />
+              <p className="text-white text-center display-5">
+                Cost Effective!
+              </p>
             </div>
-
-            <div className="row flex-column position-absolute">
-              <div
-                className="col-4 "
-                style={{ height: 300, width: 400, marginTop: 300 }}
-              >
-                <div className="thirdFDiv">
-                  <p className="text-white h2 text-center">
-                    Loved By Influencers!
-                  </p>
-                  <img src={influenceImg} alt="" width={230} />
-                </div>
-              </div>
-              <div className="col-4 " style={{ height: 300, width: 400 }}>
-                <div className="fourthFDiv">
-                  <p className="text-white h2 text-center">
-                    Trendy Collections!
-                  </p>
-                  <img src={trendyImg} alt="" width={300} />
-                </div>
-              </div>
+            <div className="secondFDiv">
+              <img src={secureImg} alt="" width={250} />
+              <p className="text-white display-5 text-center">Secured!</p>
             </div>
-
-            <div
-              className="row position-absolute p-0"
-              style={{ marginTop: 300, marginLeft: 371 }}
-            >
-              <div className="col-8 " style={{ height: 600, width: 600 }}>
-                <div className="fifthFDiv">
-                  <p className="text-white display-5 text-center">
-                    Fastest Delivery!
-                  </p>
-                  <img src={fastestDelImg} alt="" width={400} />
-                </div>
-              </div>
+            <div className="thirdFDiv">
+              <p className="text-white h2 text-center">Loved By Influencers!</p>
+              <img src={influenceImg} alt="" width={250} />
+            </div>
+            <div className="fourthFDiv">
+              <p className="text-white h2 text-center">Trendy Collections!</p>
+              <img className="mx-3" src={trendyImg} alt="" width={250} />{" "}
+            </div>
+            <div className="fifthFDiv">
+              <p className="text-white display-5 text-center">
+                Fastest Delivery!
+              </p>
+              <img src={fastestDelImg} alt="" width={400} />
             </div>
           </SpiffyFeatureDesign>
         </div>

@@ -7,25 +7,12 @@ export const Categorydiv = styled.div`
   text-align: center;
 
   img {
-    width: 50%;
+    width: 15rem;
     height: 100%;
     object-fit: cover;
 
-    -webkit-box-reflect: below 2px
-      linear-gradient(transparent, transparent, #0004);
-
-    transform-origin: center;
-    transform: perspective(800px) rotateY(25deg);
-    transition: 0.5s;
-  }
-
-  img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-
-    -webkit-box-reflect: below 2px
-      linear-gradient(transparent, transparent, #0004);
+    // -webkit-box-reflect: below 2px
+    //   linear-gradient(transparent, transparent, #0004);
 
     transform-origin: center;
     transform: perspective(800px) rotateY(25deg);
@@ -33,13 +20,13 @@ export const Categorydiv = styled.div`
   }
 
   .container {
-    max-width: 600px;
-    max-height: 350px;
+    max-width: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 
     span {
       display: none;
