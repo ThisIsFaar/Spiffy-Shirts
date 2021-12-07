@@ -40,7 +40,7 @@ function Footer() {
           {" "}
           <i class="fas fa-at"></i> Developer Contact{" "}
         </p>
-        <a
+        {/* <a
           class="github-button"
           href="https://github.com/vipulkr059"
           data-size="large"
@@ -59,7 +59,7 @@ function Footer() {
           <button className="p-2 m-3 rounded-pill">
             <i class="fab fa-github"></i> &nbsp;Follow @AniketKumarMait
           </button>
-        </a>
+        </a> */}
       </Footer>
     </div>
   );
