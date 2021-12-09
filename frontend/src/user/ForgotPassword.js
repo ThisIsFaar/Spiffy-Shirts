@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { emailVerification } from "./helper/userapicalls";
 import { Toast } from "../core/elements/Toast";
-import { Inputdiv } from "./elements/signin";
+import { Inputdiv, CustomHDiv } from "./elements/signin";
 
 const ForgotPassword = () => {
   const [email, setemail] = useState();
@@ -61,7 +61,7 @@ const ForgotPassword = () => {
 
   return (
     <Base>
-      <div>
+      <CustomHDiv>
         <div className="col-md-6 offset-sm-3 text-left">
           <form>
             {successMessage()}
@@ -83,7 +83,7 @@ const ForgotPassword = () => {
             </Toast>
           </form>
         </div>
-      </div>
+      </CustomHDiv>
     </Base>
   );
 };

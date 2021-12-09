@@ -4,15 +4,6 @@ import { isAuthenticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
 import { Menu, MenuButton, Container, Menudiv } from "./elements/userprofile";
 import profile from "../images/profile.jpg";
-
-// const margin = "3rem";
-// const StyledDiv = styled.div`
-//   //font-size: 1em;
-//   //margin: 1em;
-//   //border: 2px solid #66fcf1;
-//   border-radius: 3px;
-//   background-color: transparent;
-// `;
 const UserDashBoard = () => {
   function open() {
     const main = document.getElementById("main");

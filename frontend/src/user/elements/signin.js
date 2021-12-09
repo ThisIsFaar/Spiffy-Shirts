@@ -23,14 +23,21 @@ export const Subbutton = styled.button`
     color: black;
   }
 `;
-
+export const RootD = styled.div`
+  display: flex;
+  flex-direction: row;
+  .Lpanel {
+    flex-basis: 50vw;
+  }
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    .Lpanel {
+      flex-basis: 0vw;
+    }
+  }
+`;
 export const Divone = styled.div`
-  //background-color: transparent;
-  background-image: url(${bg});
-  background-size: cover;
-  mix-blend-mode: lighten;
-  color: #c5c6c7;
-  font-size: 2.5em;
+  font-size: 2rem;
   span {
     color: #66fcf1;
   }
@@ -68,7 +75,9 @@ export const Form = styled.form`
     text-decoration: underline;
   }
 `;
-
+export const CustomHDiv = styled.div`
+  height: 40vh;
+`;
 export const Inputdiv = styled.div`
   label {
     font-family: "Varela Round", sans-serif;

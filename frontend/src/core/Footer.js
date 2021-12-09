@@ -6,6 +6,7 @@ function Footer() {
     background: #c31432;
     background: -webkit-linear-gradient(to bottom, #240b36, #c31432);
     background: linear-gradient(to bottom, #240b36, #c31432);
+    bottom: 0;
 
     button {
       background: #0f2027; /* fallback for old browsers */

@@ -5,21 +5,13 @@ import { API } from "../backend";
 import styled from "styled-components";
 import Footer from "./Footer";
 
-const StyledDiv = styled.div`
-  font-size: 1em;
-  /* margin: ${({ margin }) => margin || "8rem"};
-  padding: 0.5em 1em; */
-  border: 2px solid #66fcf1;
-  border-radius: 15px;
-  background-color: transparent;
-`;
 const H2 = styled.h2`
   font-family: "Merriweather Sans", sans-serif;
 `;
 
 const Base = ({
-  title = "My title",
-  description = "my long desc",
+  title = "Reset Password",
+  description = "lost or forgot your password? no worries! Reset It Now ",
   className = " text-white p-5 m-2",
   children,
 }) => {
@@ -32,7 +24,7 @@ const Base = ({
           <H2 className="display-4">{title}</H2>
           <p className="lead"> {description} </p>
         </div>
-        <StyledDiv className={className}>{children}</StyledDiv>
+        <div className={className}>{children}</div>
       </div>
       <Footer />
     </div>

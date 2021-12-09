@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
-import { Subbutton, Divone, Inputdiv } from "./elements/signin";
+import { Subbutton, Divone, Inputdiv, RootD } from "./elements/signin";
 
 const Signup = () => {
   const [values, setValues] = useState({
@@ -42,14 +42,13 @@ const Signup = () => {
 
   const signUpForm = () => {
     return (
-      <div className="row">
-        <Divone className="col-6">
+      <RootD>
+        <Divone className="Lpanel">
           New to <span>SPIFFY ?</span> Sign up now and explore new trendy shirts
-          here.. HAPPY SHOPPING <span>FOLKS!!!</span>
+          here.<div>HAPPY SHOPPING FOLKS!</div>
           <br />
-          <button>Know More..</button>
         </Divone>
-        <div className="col-6 text-left">
+        <div className="Lpanel text-left">
           <form>
             <Inputdiv className="form-group">
               <label className="text-light">Name</label>&nbsp;&nbsp;
@@ -86,7 +85,7 @@ const Signup = () => {
             </Subbutton>
           </form>
         </div>
-      </div>
+      </RootD>
     );
   };
 
@@ -122,7 +121,7 @@ const Signup = () => {
   };
 
   return (
-    <Base title=" New here? Sign up NOW!!" description="">
+    <Base title="Sign up to SPIFFY!" description="">
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
