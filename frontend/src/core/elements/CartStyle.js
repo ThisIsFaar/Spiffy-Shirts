@@ -18,14 +18,31 @@ export const Cartdiv = styled.div`
     border: none;
     color: #fff;
   }
-
-  @media (max-width: 767px) {
+  .cart-products {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .cart-products-cmn {
+    flex-basis: 30%;
+  }
+  cart-products-img {
+  }
+  @media (max-width: 768px) {
+    .cart-products-cmn {
+      flex-basis: 50%;
+    }
+    .product-about {
+      display: none;
+    }
     .card {
       margin: 3vh auto;
     }
   }
 
   .cart {
+    border-right: 1px white solid;
+    flex: 0 0 70%;
     background: #360033; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to bottom,
@@ -38,22 +55,22 @@ export const Cartdiv = styled.div`
       #360033
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    border-right: 1px solid #fff;
     padding: 4vh 5vh;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
-    text-transform: capitalize;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
+    gap: 2rem;
     .cart {
+      border-radius: 1rem;
+
+      border-right: none !important;
+      flex-basis: 100%;
       padding: 4vh;
-      border-bottom-left-radius: unset;
-      border-top-right-radius: 1rem;
     }
   }
 
   .summary {
+    flex: 0 0 30%;
     font-family: "Varela Round", sans-serif;
     background: #360033; /* fallback for old browsers */
     background: -webkit-linear-gradient(
@@ -67,17 +84,15 @@ export const Cartdiv = styled.div`
       #360033
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
     border-color: #000;
     padding: 4vh;
     color: #fff;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .summary {
-      border-top-right-radius: unset;
-      border-bottom-left-radius: 1rem;
+      border-radius: 1rem;
+      flex-basis: 100%;
     }
   }
 

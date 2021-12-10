@@ -1,5 +1,5 @@
 const stripe = require("stripe")(
-  "sk_test_51IwBWTSA2DnCNsC9nLSLvPIUZqBc5EYvjP0R2eV10Gm6GBZSB1z2no7nyeURk5k4NWTOpCscwv7KQeWcLOUxw5ei00rrcxBtBi"
+  "sk_test_51K3znQSGDlZumFGQ4hKoiIe0dTHzN1m4bP9C8hX8WhadmRf19na33oLYeaVyRlqkCh5AlgLDkNHltwtnBU6gqnOJ00qEottmcr"
 );
 const uuid = require("uuid/v4");
 

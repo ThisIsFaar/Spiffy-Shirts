@@ -1,20 +1,35 @@
 import styled from "styled-components";
 
 export const CardDesign = styled.div`
-  .Card_Height {
-    height: 275px;
+  height: 35rem;
+  flex: 0 0 30%;
+  border-radius: 4rem;
+  padding: 1rem;
+  @media only screen and (max-width: 768px) {
+    flex: 0 0 45%;
+  }
+  @media only screen and (max-width: 425px) {
+    flex: 0 0 100%;
+  }
+  .card-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .Card_Title {
     color: #66fcf1;
     text-transform: capitalize;
   }
   .Card_Desc {
+    font-size: 12px;
+    margin: 0;
     overflow: auto;
     color: #c5c6c7;
     font-family: "Varela Round";
     text-transform: capitalize;
   }
   .Card_Price {
+    margin: 0;
     color: #66fcf1;
     font-weight: 600;
   }

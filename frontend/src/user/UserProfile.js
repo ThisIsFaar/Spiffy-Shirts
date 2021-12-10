@@ -18,90 +18,56 @@ const UserProfile = () => {
 
   const myProfile = () => {
     return (
-      //   <div className="card mb-4">
-      //     <h4 className="card-header text-secondary">User Profile</h4>
-      //     <ul className="list-group">
-      //       <li className="list-group-item">
-      //         <span className="badge bg-success">Name:</span>
-      //         {user.name}
-      //       </li>
-      //       <li className="list-group-item">
-      //         <span className="badge bg-success">Email:</span>
-      //         {user.email}
-      //       </li>
-      //     </ul>
-      //   </div>
-      // );
       <Container class="container">
         <div class="images">
-          <img src={profile} alt="img"/>
+          {/* <img src={profile} alt="img"/> */}
+          <i class="fas fa-user-check fa-10x"></i>
         </div>
         <div class="product">
           <h1>
-            Hello <span>{user.name}</span>
+            Howdy <span>{user.name}</span>
           </h1>
           <h2>
             Email:<span>{user.email}</span>
           </h2>
-          <p class="desc"></p>
-          <br />
-          <br />
-          <div class="buttons">
-            <button>
-              <i class="fab fa-instagram"></i>
-            </button>
-            <button>
-              <button>
-                <i class="fab fa-facebook-square"></i>
-              </button>
-            </button>
-            <button>
-              <i class="fab fa-twitter-square"></i>
-            </button>
-            <button>
-              <i class="fab fa-snapchat-square"></i>
-            </button>
-          </div>
+          <p class="desc">
+            Spiffy-Shirts respects and care about your data and privacy we
+            dont't store any of your personal data. so worry less while using
+            spiffy and Why are you reading this so conciously we just want to
+            add some data here so that our Ui looks good please stop wasting
+            your time. Ohh Dude you are still reading get some help!
+          </p>
         </div>
       </Container>
     );
   };
   return (
     <Base title="Profile" description="User Profile Page">
-      <Menu
-        class="w3-sidebar w3-bar-block w3-card w3-animate-left"
-        id="mySidebar"
+      <div
+        style={{
+          display: "flex",
+          gap: "5rem",
+          justifyContent: "center",
+          color: "#fffff",
+          textDecoration: "underline",
+          fontSize: "2rem",
+        }}
       >
-        <ul className="list-group">
-          <li className="list-group-item ">
-            <button className="w3-bar-item w3-large" onClick={close}>
-              {" "}
-              &times;
-            </button>
-          </li>
-          <li className="list-group-item">
-            <i class="fas fa-home"></i>&nbsp;
-            <Link className="" to="/user/dashboard">
-              <span className="">Home</span>
-            </Link>
-          </li>
-          <li className="list-group-item ">
-            <i class="fas fa-id-card"></i>&nbsp;
-            <Link to="/user/profile" className="">
-              Profile
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <i class="fas fa-box-open"></i>&nbsp;
-            <Link to="/user/myorders" className="">
-              Your Orders
-            </Link>
-          </li>
-        </ul>
-      </Menu>
-      <MenuButton id="openNav" className="" onClick={open}>
-        &#9776;
-      </MenuButton>
+        <Link
+          to="/user/profile"
+          className=""
+          style={{ textDecoration: "none" }}
+        >
+          Profile
+        </Link>
+        <Link
+          to="/user/myorders"
+          className=""
+          style={{ textDecoration: "none" }}
+        >
+          Your Orders
+        </Link>
+      </div>
       <div className="row ">
         <div className="col-md-8 offset-md-2">{myProfile()}</div>
       </div>

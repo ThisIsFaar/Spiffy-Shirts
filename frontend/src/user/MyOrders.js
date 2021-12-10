@@ -48,43 +48,33 @@ const MyOrders = () => {
     //   $(".modal").css("background-color", "rgb(0 0 0 / 60%)");
   };
   return (
-    <Base title="" description="" className="">
-      <Menu
-        class="w3-sidebar w3-bar-block w3-card w3-animate-left"
-        id="mySidebar"
+    <Base title="Orders" description="order history" className="">
+      <div
+        style={{
+          display: "flex",
+          gap: "5rem",
+          justifyContent: "center",
+          color: "#fffff",
+          textDecoration: "underline",
+          fontSize: "2rem",
+        }}
       >
-        <ul className="list-group">
-          <li className="list-group-item ">
-            <button className="w3-bar-item w3-large" onClick={close}>
-              {" "}
-              &times;
-            </button>
-          </li>
-          <li className="list-group-item">
-            <i class="fas fa-home"></i>&nbsp;
-            <Link className="" to="/user/dashboard">
-              <span className="">Home</span>
-            </Link>
-          </li>
-          <li className="list-group-item ">
-            <i class="fas fa-id-card"></i>&nbsp;
-            <Link to="/user/profile" className="">
-              Profile
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <i class="fas fa-box-open"></i>&nbsp;
-            <Link to="/user/myorders" className="">
-              Your Orders
-            </Link>
-          </li>
-        </ul>
-      </Menu>
-      <MenuButton id="openNav" className="" onClick={open}>
-        &#9776;
-      </MenuButton>
+        <Link
+          to="/user/dashboard"
+          className="text-white"
+          style={{ textDecoration: "none" }}
+        >
+          Profile
+        </Link>
+        <Link
+          to="/user/myorders"
+          className="text-white"
+          style={{ textDecoration: "none" }}
+        >
+          Your Orders
+        </Link>
+      </div>
       <div id="con" className="row">
-        <h2 className="text-center text-white my-3">Your Orders</h2>
         <div key="" className="row text-center mb-2 "></div>
         <div className="col-12">
           {orders.map((order, index) => {
@@ -92,40 +82,6 @@ const MyOrders = () => {
             let PriceIs = 0;
             let countProducts = 0;
             return (
-              // <div key={index} className="row card text-center mb-2 flex-row">
-              //   <div className="col-12">
-              //     {products.map((product) => {
-              //       PriceIs += product.price;
-              //       countProducts++;
-              //     })}
-              //     <div>
-              //       <div class="images">
-              //         <img src={profile} />
-              //       </div>
-              //       <h3 className="text-info text-left">
-              //         {products[0].name}
-              //         {countProducts != 1 ? (
-              //           <span> and {countProducts - 1} others</span>
-              //         ) : (
-              //           <span></span>
-              //         )}
-              //       </h3>
-              //       <h3 className="text-info text-left">Total :₹ {PriceIs}</h3>
-              //     </div>
-              //   </div>
-
-              //   <div className="col-12">
-              //     <button
-              //       type="button"
-              //       class="btn btn-info"
-              //       onClick={TrackOrder(`${order.status}`)}
-              //       value={order.status}
-              //     >
-              //       Track
-              //     </button>
-              //     {/* <h3 className="text-success text-left">{order.status}</h3> */}
-              //   </div>
-              // </div>
               <Container className="container col-12">
                 {products.map((product) => {
                   PriceIs += product.price;

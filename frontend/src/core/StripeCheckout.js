@@ -35,8 +35,7 @@ const StripeCheckout = ({
 
   const getFinalAmount = () => {
     let amount = 0;
-    products &&
-      products.map((p) =>amount = amount + p.price);
+    products && products.map((p) => (amount = amount + p.price));
     return amount;
   };
 
@@ -70,13 +69,13 @@ const StripeCheckout = ({
   };
 
   const showStripButton = () => {
+    // const temp = process.env.STRIPE_PUBKEY;
     return isAuthenticated() ? (
       <StripeCheckoutButton
-        stripeKey="pk_test_51IwBWTSA2DnCNsC9TQjf3bX7PErZVfoDDDdhawoMSnQwAB7bsToq8qwOkHrfTgT0eguVH5n3Ha78u9wElCTm7eUB00GzXm9GxL"
-        // token={makePayment}
+        stripeKey="pk_test_51K3znQSGDlZumFGQ2lM6ZOmCxhKrJtHVYgYt99dvsaDSnjLpBsCiuXafVMiZmv8sjf4nKQig8T2LmOXTJCr9F9eQ00SDVr3Sns"
         token={makePayment}
         amount={getFinalAmount() * 100}
-        name="Buy T-shirt"
+        name="Shopping at Spiffy"
         shippingAddress
         billingAddress
       >

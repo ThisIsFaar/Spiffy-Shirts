@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
 import { emailVerification } from "./helper/userapicalls";
-import { Toast } from "../core/elements/Toast";
+import { SpiffyBtn } from "../core/elements/SpiffyBtn";
 import { Inputdiv, CustomHDiv } from "./elements/signin";
 
 const ForgotPassword = () => {
@@ -76,11 +76,11 @@ const ForgotPassword = () => {
               />
             </Inputdiv>
 
-            <Toast>
+            <SpiffyBtn>
               <button onClick={onSubmit} className="butt">
                 Verify
               </button>
-            </Toast>
+            </SpiffyBtn>
           </form>
         </div>
       </CustomHDiv>

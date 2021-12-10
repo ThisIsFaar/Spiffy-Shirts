@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/CartHelper";
 import CartToast from "./CartToast";
 import { CardDesign } from "./elements/Card";
-import { Toast } from "./elements/Toast";
+import { SpiffyBtn } from "./elements/SpiffyBtn";
 
 const Card = ({
   product,
@@ -15,7 +15,7 @@ const Card = ({
   reload = undefined,
 }) => {
   const [redirect, setRedirect] = useState(false);
-  
+
   const cartTitle = product ? product.name : `A photo from pexels`;
   const cartDescription = product
     ? product.description
@@ -35,16 +35,10 @@ const Card = ({
     }
   };
   const showBuyNow = (addtoCart) => {
-    return (
-      addtoCart && (
-        <div className="butt" onClick={buyNow}>
-          Buy Now
-        </div>
-      )
-    );
+    return addtoCart && <SpiffyBtn onClick={buyNow}>Buy Now</SpiffyBtn>;
   };
   const showAddToCart = (addtoCart) => {
-    return addtoCart && <div onClick={addToCart}>{CartToast(product)}</div>;
+    return addtoCart && <SpiffyBtn onClick={addToCart}>Add To Cart</SpiffyBtn>;
   };
   const showRemoveFromCart = (removeFromCart) => {
     return (
@@ -62,26 +56,21 @@ const Card = ({
     );
   };
   return (
-    <CardDesign className="row m-1 rounded Card_Root">
-      <div className="col-md-6 p-0">
+    <CardDesign>
+      <div style={{ height: "60%" }}>
         {getARedirect(redirect)}
         <ImageHelper product={product} />
       </div>
-      <div className="col-md-6 p-0 Card_Height">
-        <div className="Card_Title h5 py-2 px-2">{cartTitle}</div>
-        <p className="Card_Desc h6 text-wrap px-1 py-1 h-25">
-          {cartDescription}
-        </p>
+      <div className="">
+        <div className="Card_Title text-center">{cartTitle}</div>
+        <p className="Card_Desc text-wrap">{cartDescription}</p>
 
-        <p className="h3 text-center h-25 py-4 Card_Price">₹ {cartPrice}</p>
-        <div className="row px-2">
-          <div className="col-6 p-0">{showAddToCart(addtoCart)}</div>
-          <Toast className="col-6 p-0">{showBuyNow(addtoCart)}</Toast>
-          <Toast className="col-6 p-0">
-            {showRemoveFromCart(removeFromCart)}
-          </Toast>
-
+        <p className="text-center Card_Price">₹ {cartPrice}</p>
+        <div className="card-btns">
+          {showAddToCart(addtoCart)}
+          {showBuyNow(addtoCart)}
         </div>
+        {/* <Toast className="">{showBuyNow(addtoCart)}</Toast> */}
       </div>
     </CardDesign>
   );

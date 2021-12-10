@@ -1,6 +1,10 @@
+import { toast } from "react-toastify";
+
 export const addItemToCart = (item, next) => {
   let cart = [];
   if (typeof window !== undefined) {
+    toast.success("Added To Cart!");
+
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
@@ -23,6 +27,7 @@ export const loadCart = () => {
 export const removeItemFromCart = (productId) => {
   let cart = [];
   if (typeof window !== undefined) {
+    toast.info("Removed!");
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }

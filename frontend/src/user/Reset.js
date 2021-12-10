@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PasswordReset } from "./helper/userapicalls";
 import { Inputdiv } from "./elements/signin";
-import { Toast } from "../core/elements/Toast";
+import { SpiffyBtn } from "../core/elements/SpiffyBtn";
 import Menu from "../core/Menu";
 
 const Reset = ({ match }) => {
@@ -77,11 +77,11 @@ const Reset = ({ match }) => {
             />
           </Inputdiv>
 
-          <Toast>
+          <SpiffyBtn>
             <button onClick={onSubmit} className="butt">
               Update
             </button>
-          </Toast>
+          </SpiffyBtn>
         </form>
       </div>
     </div>

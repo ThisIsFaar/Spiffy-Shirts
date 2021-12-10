@@ -33,104 +33,72 @@ const UserDashBoard = () => {
   } = isAuthenticated();
   const userLeftSide = () => {
     return (
-      // <div className="card">
-      //   <h4 className="card-header bg-dark text-white">User Navigations</h4>
-      //   <ul className="list-group">
-      //     <li className="list-group-item">
-      //       <Link to="/user/profile" className="nav-link text-success">
-      //         Profile
-      //       </Link>
-      //     </li>
-      //     <li className="list-group-item">
-      //       <Link to="/user/myorders" className="nav-link text-success">
-      //         Your Orders
-      //       </Link>
-      //     </li>
-      //   </ul>
-      // </div>
       <div>
-        <Menu
-          class="w3-sidebar w3-bar-block w3-card w3-animate-left"
-          id="mySidebar"
+        <div
+          style={{
+            display: "flex",
+            gap: "5rem",
+            justifyContent: "center",
+            color: "#fffff",
+            textDecoration: "underline",
+            fontSize: "2rem",
+          }}
         >
-          <ul className="list-group">
-            <li className="list-group-item ">
-              <button className="w3-bar-item w3-large" onClick={close}>
-                {" "}
-                &times;
-              </button>
-            </li>
-            <li className="list-group-item">
-              <i class="fas fa-home"></i>&nbsp;
-              <Link className="" to="/user/dashboard">
-                <span className="">Home</span>
-              </Link>
-            </li>
-            <li className="list-group-item ">
-              <i class="fas fa-id-card"></i>&nbsp;
-              <Link to="/user/profile" className="">
-                Profile
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <i class="fas fa-box-open"></i>&nbsp;
-              <Link to="/user/myorders" className="">
-                Your Orders
-              </Link>
-            </li>
-          </ul>
-        </Menu>
-        <MenuButton id="openNav" className="" onClick={open}>
-          &#9776;
-        </MenuButton>
+          {/* <Link
+            to="/user/profile"
+            className=""
+            style={{ textDecoration: "none" }}
+          >
+            Profile
+          </Link> */}
+          <Link
+            to="/user/myorders"
+            className=""
+            style={{ textDecoration: "none" }}
+          >
+            Your Orders
+          </Link>
+        </div>
       </div>
     );
   };
   const userRightSide = () => {
     return (
-      <Container class="container">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          background: "#837777c4",
+          padding: "2rem",
+          borderRadius: "3rem",
+        }}
+      >
         <div class="images">
-          <img src={profile} alt="img" />
+          <i class="fas fa-user-circle fa-10x"></i>
         </div>
-        <div class="product">
-          <h1>
-            Hello <span>{name}</span>
+        <div style={{ width: "100%" }}>
+          <h1 className="text-center" style={{ textTransform: "Capitalize" }}>
+            {name}
           </h1>
-          <h2>
+          <h2 className="text-center" style={{ fontSize: "1rem" }}>
             Email:<span>{email}</span>
           </h2>
-          <p class="desc">
-            The Nike Epic React Flyknit foam cushioning is responsive yet
-            light-weight, durable yet soft. This creates a sensation that not
-            only enhances the feeling of moving forward, but makes running feel
-            fun, too.
+          <p class="desc" style={{ textAlign: "justify" }}>
+            Spiffy-Shirts respects and care about your data and privacy we
+            dont't store any of your personal data. so worry less while using
+            spiffy and Why are you reading this so conciously we just want to
+            add some data here so that our Ui looks good please stop wasting
+            your time. Ohh Dude you are still reading get some help!
           </p>
-          <br />
-          <br />
-          <div class="buttons">
-            <button>
-              <i class="fab fa-instagram"></i>
-            </button>
-            <button>
-              <button>
-                <i class="fab fa-facebook-square"></i>
-              </button>
-            </button>
-            <button>
-              <i class="fab fa-twitter-square"></i>
-            </button>
-            <button>
-              <i class="fab fa-snapchat-square"></i>
-            </button>
-          </div>
         </div>
-      </Container>
+      </div>
     );
   };
   return (
     <Base
-      title=" Welcome User"
-      description="User's Stuff Page"
+      title={`Howdy ${name}`}
+      description="All Your perosonal Data lie here!"
       class="container bg-info p-4"
     >
       <div margin="3rem" className="row">

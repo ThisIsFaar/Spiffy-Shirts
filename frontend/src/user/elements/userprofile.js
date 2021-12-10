@@ -43,7 +43,7 @@ font-family: 'Fira Sans Condensed', sans-serif;
   width: 100%;
   height: 350px;
   background:#1f2833 ;
-  box-shadow: 5px 5px 15px #66fcf1;
+  // box-shadow: 5px 5px 15px #66fcf1;
   border-radius: 10px;
 }
 
