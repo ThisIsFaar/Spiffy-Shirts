@@ -41,6 +41,26 @@ function Footer() {
           {" "}
           <i class="fas fa-at"></i> Developer Contact{" "}
         </p>
+        <a
+          class="github-button"
+          href="https://github.com/vipulkr059"
+          data-size="large"
+          aria-label="Follow @vipulkr059 on GitHub"
+        >
+          <button className="p-2 m-3 rounded-pill">
+            <i class="fab fa-github"></i>&nbsp;Follow @vipulkr059
+          </button>
+        </a>
+        <a
+          class="github-button"
+          href="https://github.com/AniketKumarMait"
+          data-size="large"
+          aria-label="Follow @AniketKumarMait on GitHub"
+        >
+          <button className="p-2 m-3 rounded-pill">
+            <i class="fab fa-github"></i> &nbsp;Follow @AniketKumarMait
+          </button>
+        </a>
       </Footer>
     </div>
   );
