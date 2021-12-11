@@ -4,6 +4,15 @@ import { isAuthenticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
 import { Menu, MenuButton, Container, Menudiv } from "./elements/userprofile";
 import profile from "../images/profile.jpg";
+import styled from "styled-components";
+
+const Ml = styled.div`
+  @media only screen and (max-width: 425px) {
+    #prd-ml {
+      padding: 1rem !important;
+    }
+  }
+`;
 const UserDashBoard = () => {
   function open() {
     const main = document.getElementById("main");
@@ -96,20 +105,22 @@ const UserDashBoard = () => {
     );
   };
   return (
-    <Base
-      title={`Howdy ${name}`}
-      description="All Your perosonal Data lie here!"
-      class="container bg-info p-4"
-    >
-      <div margin="3rem" className="row">
-        <Menudiv id="menu" className="col-0">
-          {userLeftSide()}
-        </Menudiv>
-      </div>
-      <div id="main" className="col-12">
-        {userRightSide()}
-      </div>
-    </Base>
+    <Ml>
+      <Base
+        title={`Howdy ${name}`}
+        description="All Your perosonal Data lie here!"
+        class="container bg-info p-4"
+      >
+        <div margin="3rem" className="row">
+          <Menudiv id="menu" className="col-0">
+            {userLeftSide()}
+          </Menudiv>
+        </div>
+        <div id="main" className="col-12">
+          {userRightSide()}
+        </div>
+      </Base>
+    </Ml>
   );
 };
 

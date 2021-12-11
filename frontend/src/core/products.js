@@ -5,7 +5,15 @@ import { getProducts } from "./helper/coreapicalls";
 import { SpiffyBtn } from "./elements/SpiffyBtn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styled from "styled-components";
 
+const Ml = styled.div`
+  @media only screen and (max-width: 425px) {
+    #prd-ml {
+      padding: 1rem !important;
+    }
+  }
+`;
 const Products = () => {
   const [productsList, setProducts] = useState([]);
 
@@ -55,7 +63,7 @@ const Products = () => {
   };
 
   return (
-    <div>
+    <Ml>
       <Base title="All Products" description="Find all our own creation">
         <ToastContainer />
 
@@ -87,7 +95,7 @@ const Products = () => {
           })}
         </div>
       </Base>
-    </div>
+    </Ml>
   );
 };
 
