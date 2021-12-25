@@ -7,7 +7,6 @@ import StatusModal from "./Modal";
 import $ from "jquery";
 import { Container, Menu, MenuButton } from "./elements/orders";
 import Image from "./helper/Image";
-
 const MyOrders = () => {
   function open() {
     document.getElementById("mySidebar").style.width = "100%";
@@ -45,6 +44,7 @@ const MyOrders = () => {
 
     $("#id").text(order);
     $("#main").css("display", "block");
+    document.getElementById("main").scrollIntoView();
     //   $(".modal").css("background-color", "rgb(0 0 0 / 60%)");
   };
   return (
@@ -74,54 +74,50 @@ const MyOrders = () => {
           Your Orders
         </Link>
       </div>
-      <div id="con" className="row">
-        <div key="" className="row text-center mb-2 "></div>
-        <div className="col-12">
-          {orders.map((order, index) => {
-            const products = order.products;
-            let PriceIs = 0;
-            let countProducts = 0;
-            return (
-              <Container className="container col-12">
-                {products.map((product) => {
-                  PriceIs += product.price;
-                  countProducts++;
-                  productId = product;
-                })}
-                <div class="images">
-                  <Image product={productId} />
-                </div>
-                <div class="product">
-                  <h1>
-                    <span>
-                      {products[0].name}
-                      {countProducts !== 1 ? (
-                        <span> and {countProducts - 1} others</span>
-                      ) : (
-                        <span></span>
-                      )}
-                    </span>
-                  </h1>
-                  <h2>
-                    <span>Total :₹ {PriceIs}</span>
-                  </h2>
-                  <p class="desc">{products[0].description}</p>
-                  <br />
-                  <br />
-                  <div class="buttons">
-                    <button
-                      type="button"
-                      onClick={TrackOrder(`${order._id}`)}
-                      value={order.status}
-                    >
-                      Track Order <i class="fas fa-shipping-fast"></i>
-                    </button>
-                  </div>
-                </div>
-              </Container>
-            );
-          })}
-        </div>
+      <div
+        id="con"
+        className="row"
+        style={{
+          gap: "2rem 0rem",
+          justifyContent: "center",
+          margin: "2rem 0rem",
+        }}
+      >
+        {orders.map((order, index) => {
+          const products = order.products;
+          let PriceIs = 0;
+          let countProducts = 0;
+          return (
+            <Container>
+              {products.map((product) => {
+                PriceIs += product.price;
+                countProducts++;
+                productId = product;
+              })}
+              <div class="images">
+                <Image product={productId} />
+              </div>
+              <div class="product">
+                <span>
+                  {products[0].name}
+                  {countProducts !== 1 ? (
+                    <span> and {countProducts - 1} others</span>
+                  ) : (
+                    <span></span>
+                  )}
+                </span>
+                <p>Total :₹ {PriceIs}</p>
+                <button
+                  type="button"
+                  onClick={TrackOrder(`${order._id}`)}
+                  value={order.status}
+                >
+                  Track Order <i class="fas fa-shipping-fast"></i>
+                </button>
+              </div>
+            </Container>
+          );
+        })}
       </div>
       <StatusModal order={temp} />
     </Base>
