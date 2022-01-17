@@ -53,12 +53,12 @@ function Footer() {
         </a>
         <a
           class="github-button"
-          href="https://github.com/thisisfaar"
+          href="https://github.com/aniketkumarmait"
           data-size="large"
-          aria-label="Follow @thisisfaar on GitHub"
+          aria-label="Follow @AniketKumarMait on GitHub"
         >
           <button className="p-2 m-3 rounded-pill">
-            <i class="fab fa-github"></i> &nbsp;Follow @thisisfaar
+            <i class="fab fa-github"></i> &nbsp;Follow @AniketKumarMait
           </button>
         </a>
       </Footer>
