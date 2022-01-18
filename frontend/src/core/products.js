@@ -19,8 +19,8 @@ const Products = () => {
 
   const [sortType, setsortType] = useState("");
 
-  const loadAllproduct = () => {
-    getProducts().then((data) => {
+  const loadAllproduct = async () => {
+    await getProducts().then((data) => {
       if (data.error) {
       } else {
         setProducts(data);
