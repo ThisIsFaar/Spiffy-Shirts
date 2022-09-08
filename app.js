@@ -7,11 +7,7 @@ const cors = require('cors');
 
 require('dotenv').config();
 
-//dev1 commit
-
-//testings
 //My routes
-//dev2
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const categoryRoutes = require('./routes/category');
@@ -19,20 +15,7 @@ const productRoutes = require('./routes/product');
 const orderRoutes = require('./routes/order');
 const stripeRoutes = require('./routes/stripepayment');
 
-// mongoose.connect('mongodb://localhost:27017/test',
-// {useNewUrlParser: true, useUnifiedTopology: true});
-
-//DB connection
-// mongoose
-//   .connect(process.env.DATABASE, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//   })
-//   .then(() => {
-//     console.log("DB CONNECTED");
-//   });
-
+//DB
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
@@ -59,10 +42,13 @@ app.use('/api', productRoutes);
 app.use('/api', orderRoutes);
 app.use('/api', stripeRoutes);
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("frontend/build"));
-// }
-app.use(express.static('frontend/build'));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  // const path = require('path');
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  // });
+}
 
 //Starting a Server
 app.listen(port, () => {
