@@ -4,6 +4,15 @@ import { isAuthenticated } from "../auth/helper/index";
 import { Link } from "react-router-dom";
 import { Menu, MenuButton, Container, Menudiv } from "./elements/userprofile";
 import profile from "../images/profile.jpg";
+import styled from "styled-components";
+
+const Ml = styled.div`
+  @media only screen and (max-width: 425px) {
+    #prd-ml {
+      padding: 1rem !important;
+    }
+  }
+`;
 const UserDashBoard = () => {
   function open() {
     const main = document.getElementById("main");
@@ -87,29 +96,29 @@ const UserDashBoard = () => {
           <p class="desc" style={{ textAlign: "justify" }}>
             Spiffy-Shirts respects and care about your data and privacy we
             dont't store any of your personal data. so worry less while using
-            spiffy and Why are you reading this so conciously we just want to
-            add some data here so that our Ui looks good please stop wasting
-            your time. Ohh Dude you are still reading get some help!
+            spiffy.
           </p>
         </div>
       </div>
     );
   };
   return (
-    <Base
-      title={`Howdy ${name}`}
-      description="All Your perosonal Data lie here!"
-      class="container bg-info p-4"
-    >
-      <div margin="3rem" className="row">
-        <Menudiv id="menu" className="col-0">
-          {userLeftSide()}
-        </Menudiv>
-      </div>
-      <div id="main" className="col-12">
-        {userRightSide()}
-      </div>
-    </Base>
+    <Ml>
+      <Base
+        title={`Howdy ${name}`}
+        description="All Your perosonal Data lie here!"
+        class="container bg-info p-4"
+      >
+        <div margin="3rem" className="row">
+          <Menudiv id="menu" className="col-0">
+            {userLeftSide()}
+          </Menudiv>
+        </div>
+        <div id="main" className="col-12">
+          {userRightSide()}
+        </div>
+      </Base>
+    </Ml>
   );
 };
 

@@ -31,7 +31,7 @@ function Footer() {
     <div>
       <Footer className="container-fluid  text-black text-center py-3">
         <h4 className="text-white">
-          Made By &nbsp;<i class="fas fa-heart"></i>
+          Made With &nbsp;<i class="fas fa-heart"></i>
         </h4>
 
         <p className="text-white ">
@@ -41,6 +41,26 @@ function Footer() {
           {" "}
           <i class="fas fa-at"></i> Developer Contact{" "}
         </p>
+        <a
+          class="github-button"
+          href="https://github.com/thisisfaar"
+          data-size="large"
+          aria-label="Follow @thisisfaar on GitHub"
+        >
+          <button className="p-2 m-3 rounded-pill">
+            <i class="fab fa-github"></i>&nbsp;Follow @thisisfaar
+          </button>
+        </a>
+        <a
+          class="github-button"
+          href="https://github.com/vipulkr059"
+          data-size="large"
+          aria-label="Follow @vipulkr059 on GitHub"
+        >
+          <button className="p-2 m-3 rounded-pill">
+            <i class="fab fa-github"></i> &nbsp;Follow @Vipulkr059
+          </button>
+        </a>
       </Footer>
     </div>
   );

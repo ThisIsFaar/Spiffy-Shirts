@@ -36,16 +36,14 @@ export const MenuButton = styled.button`
   }
 `;
 export const Container = styled.div`
+display: flex;
+flex-wrap: wrap;
 font-family: 'Fira Sans Condensed', sans-serif;
   position: relative;
-  margin: 5px;
   overflow: hidden;
-  width: 100%;
-  height: 250px;
+  width: 90%;
   background:#1f2833 ;
-  box-shadow: 5px 5px 15px #66fcf1;
   border-radius: 10px;
-}
 
 p {
   font-size: 0.6em;
@@ -70,29 +68,33 @@ h2 {
 }
 
 img {
-  width: 250px;
-  margin: 17px;
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem;
   border-radius: 10px;
 }
-.product {
-  position: absolute;
-  width: 60%;
-  height: 100%;
-  top: 10%;
-  left: 40%;
+.product{
+  display: flex;
+    flex-direction: column;
+    gap: 10%;
+    margin-top: 2rem;
 }
-
-.desc {
-  font-family: 'Fira Sans Condensed', sans-serif;
-  text-transform: none;
-  letter-spacing: 0;
-  margin-bottom: 17px;
-  font-size: 1em;
-  line-height: 1.6em;
-  margin-right: 25px;
-  text-align: justify;
+.product span {
+  color: white;
+  font-size: 2rem;
 }
-
+.product p{
+  color: #66fcf1;
+  font-size: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .product{
+    span{
+      font-size: 20px;
+    }
+    align-items: center;
+  }
+}
 button {
   display: block;
   font-family: "Varela Round", sans-serif;
@@ -103,7 +105,7 @@ button {
   text-align: center;
   font-size: 20px;
   padding: 10px;
-  width: 25%;
+  width: 15rem;
   transition: all 0.5s;
   cursor: pointer;
   margin-top: 10px;
@@ -118,6 +120,11 @@ button {
 `;
 
 export const Images = styled.img`
+  @media only screen and (max-width: 600px) {
+    width: 75% !important;
+    height: 9% !important;
+    margin: 10% !important;
+  }
   max-width: 100%;
   max-height: 100%;
   margin: 17px;

@@ -73,6 +73,7 @@ const ForgotPassword = () => {
                 onChange={handleChange}
                 className="form-control"
                 type="text"
+                required
               />
             </Inputdiv>
 

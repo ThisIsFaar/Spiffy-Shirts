@@ -33,9 +33,7 @@ const UserProfile = () => {
           <p class="desc">
             Spiffy-Shirts respects and care about your data and privacy we
             dont't store any of your personal data. so worry less while using
-            spiffy and Why are you reading this so conciously we just want to
-            add some data here so that our Ui looks good please stop wasting
-            your time. Ohh Dude you are still reading get some help!
+            spiffy.
           </p>
         </div>
       </Container>
