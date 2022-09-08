@@ -77,11 +77,7 @@ const Reset = ({ match }) => {
             />
           </Inputdiv>
 
-          <SpiffyBtn>
-            <button onClick={onSubmit} className="butt">
-              Update
-            </button>
-          </SpiffyBtn>
+          <SpiffyBtn onClick={onSubmit}>Update</SpiffyBtn>
         </form>
       </div>
     </div>
