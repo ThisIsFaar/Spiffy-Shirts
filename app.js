@@ -13,9 +13,12 @@ const connectDB = async () => {
   try {
     console.log('2');
 
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-    });
+    await mongoose.connect(
+      'mongodb+srv://thisisfaar:SkTwT7Zpz2p1edEY@thisisfaarcluster.7a2jvot.mongodb.net/spiffy-shirts?retryWrites=true&w=majority',
+      {
+        useNewUrlParser: true,
+      }
+    );
 
     console.log('MongoDB is Connected...');
   } catch (err) {
