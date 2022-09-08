@@ -45,26 +45,6 @@ const StatusModal = (orders) => {
     $("#con").css("filter", "none");
   };
   return (
-    // <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    //   <div className="modal-dialog" role="document">
-    //     <div className="modal-content">
-    //       <div className="modal-header">
-    //         <h5 className="modal-title text-center" id="exampleModalLabel">Status</h5>
-    //       </div>
-    //       <div className="modal-body">
-    //         <div className="StausBarBg bg-primary p-2 rounded" style={mystyle}>
-    //           <div className="StatusBarFg bg-warning p-1 text-white
-    //            rounded " >
-    //            <span id="OrderStatus" ></span>
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div className="modal-footer">
-    //         <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={closeModal} >Close</button>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <Statusdiv id="main" className="container  px-1 px-md-4 py-5 mx-auto">
       <div className="card">
         <li id="bl" className="list-group-item ">
@@ -98,7 +78,7 @@ const StatusModal = (orders) => {
             </ul>
           </div>
         </div>
-        <div className="row  justify-content-center ">
+        <div className="row  justify-content-center status-label">
           <div className="col-12">
             <ul id="status" className="text-center">
               <li className="">

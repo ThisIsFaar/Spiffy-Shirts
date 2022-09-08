@@ -8,7 +8,15 @@ import ToastImg from "./helper/ToastImg";
 import { wrap } from "lodash";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styled from "styled-components";
 
+const Ml = styled.div`
+  @media only screen and (max-width: 425px) {
+    #prd-ml {
+      padding: 1rem !important;
+    }
+  }
+`;
 const Cart = () => {
   const [Product, setProducts] = useState([]);
   const [reload, setReload] = useState(false);
@@ -103,18 +111,20 @@ const Cart = () => {
     );
   };
   return (
-    <Base title="Your Cart" description="Ready to Checkout">
-      <div className="row text-center">
-        <div className="col-12 ">
-          {Product !== undefined && Product.length > 0 ? (
-            loadAllProducts(Product)
-          ) : (
-            <h3>No products in cart</h3>
-          )}
+    <Ml>
+      <Base title="Your Cart" description="Ready to Checkout">
+        <div className="row text-center">
+          <div className="col-12 ">
+            {Product !== undefined && Product.length > 0 ? (
+              loadAllProducts(Product)
+            ) : (
+              <h3>No products in cart</h3>
+            )}
+          </div>
         </div>
-      </div>
-      <ToastContainer />
-    </Base>
+        <ToastContainer />
+      </Base>
+    </Ml>
   );
 };
 

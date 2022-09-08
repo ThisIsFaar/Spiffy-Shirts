@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const Statusdiv = styled.div`
+  @media only screen and (max-width: 600px) {
+    .status-label {
+      display: none;
+    }
+  }
   display: none;
   z-index: 2;
   position: absolute;
@@ -22,7 +27,7 @@ export const Statusdiv = styled.div`
     color: #fff;
     background-color: #1f2833;
     padding-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 50%;
     margin-bottom: 50px;
     border-radius: 10px;
   }
