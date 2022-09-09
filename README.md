@@ -6,7 +6,7 @@ Live Hosted At: [Heroku Link](https://spiffy-shirts-h.herokuapp.com/)
 
 [![Untitled.png](https://i.postimg.cc/Tw9k02vJ/Untitled.png)](https://postimg.cc/WFd6bv3d)
 
-[![Untitled.png](https://i.postimg.cc/PqS5YZFX/Untitled.png)](https://postimg.cc/kVtCdVmz)
+[![prod.png](https://i.postimg.cc/Kj6gS75v/prod.png)](https://postimg.cc/bSRv1tMK)
 
 [![Untitled.png](https://i.postimg.cc/fbxD2tKd/Untitled.png)](https://postimg.cc/FfsM1KwF)
 
