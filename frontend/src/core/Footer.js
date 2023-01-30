@@ -37,7 +37,7 @@ function Footer() {
         <p className="text-white ">
           &#169;All Rights Reserved By Spiffy-Shirts
         </p>
-        <p className=" text-white">
+        {/* <p className=" text-white">
           {" "}
           <i class="fas fa-at"></i> Developer Contact{" "}
         </p>
@@ -60,7 +60,7 @@ function Footer() {
           <button className="p-2 m-3 rounded-pill">
             <i class="fab fa-github"></i> &nbsp;Follow @Vipulkr059
           </button>
-        </a>
+        </a> */}
       </Footer>
     </div>
   );
