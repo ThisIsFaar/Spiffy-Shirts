@@ -5,6 +5,7 @@ import { addItemToCart, removeItemFromCart } from "./helper/CartHelper";
 import CartToast from "./CartToast";
 import { CardDesign } from "./elements/Card";
 import { SpiffyBtn } from "./elements/SpiffyBtn";
+import shirtFile from "./mens_casual_shirt.glb";
 
 const Card = ({
   product,
@@ -59,7 +60,14 @@ const Card = ({
     <CardDesign>
       <div style={{ height: "60%" }}>
         {getARedirect(redirect)}
-        <ImageHelper product={product} />
+        {/* <ImageHelper product={product} /> */}
+        <model-viewer
+          src={shirtFile}
+          ar
+          shadow-intensity="1"
+          camera-controls
+          touch-action="pan-y"
+        ></model-viewer>
       </div>
       <div className="">
         <div className="Card_Title text-center">{cartTitle}</div>
@@ -69,8 +77,8 @@ const Card = ({
         <div className="card-btns">
           {showAddToCart(addtoCart)}
           {showBuyNow(addtoCart)}
+          {}
         </div>
-        {/* <Toast className="">{showBuyNow(addtoCart)}</Toast> */}
       </div>
     </CardDesign>
   );

@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/model-viewer": "^3.1.1",
     "@sendgrid/mail": "^7.4.4",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
