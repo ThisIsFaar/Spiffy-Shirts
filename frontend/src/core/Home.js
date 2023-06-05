@@ -31,10 +31,9 @@ export default function Home() {
 
   const loadAllproduct = () => {
     getProducts().then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
+      if (data) {
         setProducts(data);
+      } else {
       }
     });
   };

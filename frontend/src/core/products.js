@@ -21,8 +21,7 @@ const Products = () => {
 
   const loadAllproduct = async () => {
     await getProducts().then((data) => {
-      if (data.error) {
-      } else {
+      if (data) {
         setProducts(data);
       }
     });
@@ -61,41 +60,84 @@ const Products = () => {
     console.log(sorted);
     setProducts(sorted);
   };
-
+  const [ismodelOpen, setIsmodelOpen] = useState(false);
+  const [selectedGlb, setSelectedGlb] = useState(null);
   return (
-    <Ml>
-      <Base title="All Products" description="Find all our own creation">
-        <ToastContainer />
-
-        <select
-          class="Sort_Button p-2 rounded m-3"
-          onChange={(e) => setsortType(e.target.value)}
-        >
-          <option selected>Sort-By</option>
-          <option value="stock">Stock</option>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-          <option value="sold">Sold</option>
-        </select>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: "2rem",
-          }}
-        >
-          {productsList.map((product, index) => {
-            return (
-              // <div key={index} className="col-6">
-              <Card product={product} />
-              // </div>
-            );
-          })}
-        </div>
-      </Base>
-    </Ml>
+    <>
+      <Ml>
+        <Base title="All Products" description="Find all our own creation">
+          {ismodelOpen && (
+            <div
+              style={{
+                position: "fixed",
+                background: "white",
+                inset: "0",
+                height: "100vh",
+                width: "100vw",
+                padding: "0",
+                margin: "0",
+                maxWidth: "none",
+                color: "black",
+                "background":"linear-gradient(to top, #333399, #360033)"
+              }}
+            >
+                <model-viewer
+                  src={selectedGlb}
+                  ar
+                  shadow-intensity="1"
+                  camera-controls
+                  touch-action="pan-y"
+                  style={{
+                    width: "100%",
+                    height: "100%"
+                  }}
+                ></model-viewer>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "10%",
+                  display: "flex",
+                  justifyContent: "center",
+                  width: "100%",
+                }}
+              >
+              
+               <SpiffyBtn onClick={() => setIsmodelOpen(false)} >Back to 2D</SpiffyBtn>
+                
+              </div>
+            </div>
+          )}
+          <ToastContainer />
+          <select
+            class="Sort_Button p-2 rounded m-3"
+            onChange={(e) => setsortType(e.target.value)}
+          >
+            <option selected>Sort-By</option>
+            <option value="stock">Stock</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            <option value="sold">Sold</option>
+          </select>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              gap: "2rem",
+            }}
+          >
+            {productsList.map((product, index) => {
+              return (
+                // <div key={index} className="col-6">
+                <Card product={product} setSelectedGlb={setSelectedGlb} setIsmodelOpen={setIsmodelOpen} />
+                // </div>
+              );
+            })}
+          </div>
+        </Base>
+      </Ml>
+    </>
   );
 };
 
