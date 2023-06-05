@@ -25,7 +25,7 @@ import { AboutSpiffy } from "./elements/AboutStyle";
 import Footer from "./Footer";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]); 
   const [setError] = useState(false);
   const [sortType] = useState("");
 
