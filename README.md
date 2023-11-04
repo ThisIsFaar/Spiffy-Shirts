@@ -2,7 +2,7 @@
 
 An E-commerce Shirt Selling Store.
 
-Live Hosted At: [Heroku Link](https://spiffy-shirts.herokuapp.com/)
+Live Hosted At: [spiffy-shirts.netlify.app ](https://spiffy-shirts.netlify.app/)
 
 [![Untitled.png](https://i.postimg.cc/Tw9k02vJ/Untitled.png)](https://postimg.cc/WFd6bv3d)
 
